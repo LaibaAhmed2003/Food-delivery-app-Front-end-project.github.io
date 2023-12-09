@@ -1,8 +1,13 @@
 const Home = () => {
   return (
-    <div>
-      <img src="" alt="" />
-    </div>
+    <>
+      <div className="fit">
+        <a className="Order-btn" href="/burgers">
+          Order Now
+        </a>
+      </div>
+    </>
   );
 };
+
 export default Home;

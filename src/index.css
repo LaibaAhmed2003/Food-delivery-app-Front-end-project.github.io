@@ -30,3 +30,28 @@
   margin: 4px;
   padding: 4px;
 }
+.fit {
+  height: 500px;
+  width: 100%;
+  background-image: url("https://www.dukan.pk/demo//dtemp/bannerImage1694519463-73422969575848.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+  color: white;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Order-btn {
+  margin-top: 20%;
+  background-color: rgb(206, 12, 12);
+  color: white;
+  padding: 17px 39px;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
