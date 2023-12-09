@@ -1,5 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMagnifyingGlass,
+  faUser,
+  faBagShopping,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
@@ -22,6 +28,17 @@ const Navbar = () => {
         </NavLink>
         <NavLink to="/signin" className="navlinks">
           Sign in
+        </NavLink>
+      </div>
+      <div className="rightdiv">
+        <NavLink to="/search" className="nav-icons">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </NavLink>
+        <NavLink to="/profile" className="nav-icons">
+          <FontAwesomeIcon icon={faUser} />
+        </NavLink>
+        <NavLink to="/cart" className="nav-icons">
+          <FontAwesomeIcon icon={faBagShopping} />
         </NavLink>
       </div>
     </div>

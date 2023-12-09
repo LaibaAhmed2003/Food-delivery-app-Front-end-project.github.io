@@ -9,16 +9,18 @@
   padding: 0;
 }
 .Header {
-  height: 70px;
+  height: 90px;
   width: 100%;
-  background-color: aliceblue;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0.5px 0.5px 1.5px grey;
 }
 .leftnav h3 {
   font-size: 18px;
-  margin-left: 10px;
+  margin-left: 70px;
+  text-transform: uppercase;
 }
 
 .navlinksBar {
@@ -28,5 +30,17 @@
   text-decoration: none;
   color: black;
   margin: 4px;
+  padding: 8px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.rightdiv {
+  margin-right: 60px;
+}
+.nav-icons {
+  text-decoration: none;
+  margin: 4px;
   padding: 4px;
+  color: black;
+  font-weight: 100;
 }
