@@ -1,9 +1,8 @@
-import "./App.css";
-
+import Router from "./Router";
 function App() {
   return (
     <>
-      <h1>Food Delivery App</h1>
+      <Router />
     </>
   );
 }
