@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import FoodCard from '../components/foodcard';
 
+
 const Search = () => {
   const [searchInput, setSearchInput] = useState('');
  
