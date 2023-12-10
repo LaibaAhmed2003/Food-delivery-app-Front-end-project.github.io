@@ -1,30 +1,15 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import FoodCard from '../components/foodcard';
 
-const Burgers = () => {
-  const [Food, setFood] = useState([]);
+const Search = () => {
   const [searchInput, setSearchInput] = useState('');
-  console.log(Food);
+ 
 
   useEffect(() => {
     getData();
   }, []);
 
-  const getData = async () => {
-    try {
-      const resp = await axios.get('http://localhost:3000/foods/get');
-      const responseData = resp.data.myData;
-
-      if (Array.isArray(responseData)) {
-        setFood(responseData);
-      } else {
-        console.error("Invalid data format. Expected an array.");
-      }
-    } catch (e) {
-      console.error("Error fetching data:", e);
-    }
-  };
+  
   const filteredFood = Food.filter(item =>
     item.title && item.title.toLowerCase().includes(searchInput.toLowerCase())
   );
@@ -58,4 +43,4 @@ const Burgers = () => {
 };
 
 
-export default Burgers;
+export default Search;
