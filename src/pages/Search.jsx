@@ -1,54 +1,47 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import FoodCard from '../components/foodcard';
 
-const SearchBar = ({ onSearch }) => {
+
+const Search = () => {
   const [searchInput, setSearchInput] = useState('');
-  const [product, setproduct] = useState([]);
+ 
 
+  useEffect(() => {
+    getData();
+  }, []);
 
-  const filteredProduct = product.filter(item =>
-    item.title.toLowerCase().includes(searchInput.toLowerCase())
+  
+  const filteredFood = Food.filter(item =>
+    item.title && item.title.toLowerCase().includes(searchInput.toLowerCase())
   );
-
-  const handleSearch = () => {
-    onSearch(searchInput);
-  };
+  
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search ..."
-        value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
-        style={{
-          width: '100%',
-          maxwidth: '400px',
-          height: '40px',
-          margin: '0 auto',
-          padding: '0 10px',
-          border: '1px solid #ccc',
-          borderRadius: '4px',
-        }}
-      />
-      <button onClick={handleSearch} style={{
-        width: '40px',
-        height: '40px',
-        margin: '0 0 0 -40px',
-        border: 'none',
-        backgroundColor: '#fff',
-        cursor: 'pointer',
-      }}>
-        <span style={{
-          content: '',
-          width: '16px',
-          height: '16px',
-          margin: '12px auto',
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-        }} />
-      </button>
+    <div className='main-contain'>
+      <h1 className='Food-heading'>FOOD_ITEMS</h1>
+      <div>
+        <input
+          type="text"
+          placeholder="Search Food"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+      </div>
+      <div className='food-page'>
+        {filteredFood.map((item, index) => (
+          <FoodCard
+            key={index}
+            name={item.title}
+            price={item.price}
+            category={item.category}
+            image={item.image}
+            id={item.id}
+          />
+        ))}
+      </div>
     </div>
   );
 };
 
-export default SearchBar;
+
+export default Search;

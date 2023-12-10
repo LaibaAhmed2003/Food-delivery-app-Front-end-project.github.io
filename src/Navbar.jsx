@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,7 +17,7 @@ const Navbar = () => {
         <NavLink to="/" className="navlinks">
           Home
         </NavLink>
-        <NavLink to="/burger" className="navlinks">
+        <NavLink to="/burgers" className="navlinks">
           Menu
         </NavLink>
         <NavLink to="/profile" className="navlinks">
