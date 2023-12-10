@@ -40,6 +40,7 @@ const Navbar = () => {
         <NavLink to="/cart" className="nav-icons">
           <FontAwesomeIcon icon={faBagShopping} />
         </NavLink>
+        <NavLink to="/checkout">Checkout</NavLink>
       </div>
     </div>
   );
