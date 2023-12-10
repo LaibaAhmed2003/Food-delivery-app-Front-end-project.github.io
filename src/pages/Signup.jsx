@@ -68,9 +68,10 @@ const Signup = () => {
             </button>
             <p class="mt-2 text-black-500 text-xs">
               Already have an account,{" "}
-              <a href="#" class="text-black-700 font-bold">
-                LogIn
-              </a>
+              <a href="#" class="text-red-700 font-bold">
+                Login
+              </a>{" "}
+              now.
             </p>
           </form>
         </div>
