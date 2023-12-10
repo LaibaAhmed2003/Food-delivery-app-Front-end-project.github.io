@@ -6,6 +6,7 @@ const Burgers = () => {
   const [Food, setFood] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   // console.log(Food[0].name);
+  // console.log(Food);
 
   useEffect(() => {
     getData();
