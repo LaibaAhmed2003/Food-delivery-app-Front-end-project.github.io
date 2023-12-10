@@ -35,7 +35,7 @@ const Burgers = () => {
   return (
     <div className="main-contain">
       <h1 className="Food-heading">FOOD_ITEMS</h1>
-      <div className="bg-black w-full flex justify-center ">
+      <div className=" w-full flex justify-center ">
         <input
           type="text"
           placeholder="Search Food"
