@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 
 const SearchBar = ({ onSearch }) => {
   const [searchInput, setSearchInput] = useState('');
+  const [product, setproduct] = useState([]);
+
+
+  const filteredProduct = product.filter(item =>
+    item.title.toLowerCase().includes(searchInput.toLowerCase())
+  );
 
   const handleSearch = () => {
     onSearch(searchInput);
@@ -37,7 +43,6 @@ const SearchBar = ({ onSearch }) => {
           width: '16px',
           height: '16px',
           margin: '12px auto',
-          backgroundImage: 'url("https://i.imgur.com/search-icon.png")',
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
         }} />
