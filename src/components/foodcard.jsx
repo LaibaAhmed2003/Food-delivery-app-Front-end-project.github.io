@@ -5,10 +5,9 @@ const ProductCard = ({ name, price, img, dec, id }) => {
     <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
       
       <Link 
-      to={`/Burgerdetail/${id}`}
+      to={`/burger-detail/${id}`}
       className="btn btn-primary product-btn"
       >
-        ShowDetails
         </Link>
         <img
           src={img}
