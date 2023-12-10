@@ -1,9 +1,15 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ name, price, img, dec, id }) => {
   return (
     <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-      <a href="#">
+      
+      <Link 
+      to={`/Burgerdetail/${id}`}
+      className="btn btn-primary product-btn"
+      >
+        ShowDetails
+        </Link>
         <img
           src={img}
           alt="Food"
@@ -21,9 +27,10 @@ const ProductCard = ({ name, price, img, dec, id }) => {
             <del>
               <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
             </del>
+       
           </div>
         </div>
-      </a>
+      
     </div>
   );
 };

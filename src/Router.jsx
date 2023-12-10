@@ -5,7 +5,8 @@ import Burgers from "./pages/Burgers";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 import Search from "./pages/Search";
-
+//import Burgerdetail from "./pages/BurgerDetail"
+import BurgersDetail from "./pages/BurgerDetail"
 
 const Router = () => {
   return (
@@ -19,6 +20,8 @@ const Router = () => {
         <Route path="/search" element={<Search />} />
         <Route path="/burgers" element={<Burgers />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/Burgerdetail/:id" element={<BurgersDetail />} />
+        
       </Routes>
     </BrowserRouter>
   );
