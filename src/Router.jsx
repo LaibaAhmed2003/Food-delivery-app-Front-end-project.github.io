@@ -9,6 +9,8 @@ import store from "./pages/Cart/Store";
 import { Provider } from "react-redux";
 import Checkout from "./pages/Checkout";
 import BurgersDetail from "./pages/BurgerDetail"
+import Search from "./pages/Search";
+
 
 const Router = () => {
   return (
@@ -23,7 +25,8 @@ const Router = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/burger-detail/:id" element={<Burgers />} />
+          <Route path="/burger-detail/:id" element={<BurgersDetail />} />
+          <Route path="/search" element={<Search/>} />
         </Routes>
       </BrowserRouter>
     </Provider>
