@@ -35,10 +35,11 @@ const Burgers = () => {
   return (
     <div className="main-contain">
       <h1 className="Food-heading">FOOD_ITEMS</h1>
-      <div>
+      <div className="bg-black w-full flex justify-center ">
         <input
           type="text"
           placeholder="Search Food"
+          className="p-3"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
