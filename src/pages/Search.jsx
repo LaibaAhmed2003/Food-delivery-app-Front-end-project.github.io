@@ -69,7 +69,7 @@ const SearchBar = ({ onSearch }) => {
             width: '16px',
             height: '16px',
             margin: '12px auto',
-            backgroundImage: 'url("https://i.imgur.com/search-icon.png")',
+            //backgroundImage: 'url("https://i.imgur.com/search-icon.png")',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
           }}
