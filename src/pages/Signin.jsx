@@ -4,6 +4,10 @@ import { NavLink } from "react-router-dom";
 
 // import "../index.css";
 const Signin = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -13,7 +17,7 @@ const Signin = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white mb-2">
                 Login
               </h1>
-              <htmlForm className="space-y-4 md:space-y-6">
+              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
                     htmlFor="email"
@@ -64,7 +68,7 @@ const Signin = () => {
                     </a>
                   </NavLink>
                 </p>
-              </htmlForm>
+              </form>
             </div>
           </div>
         </div>
