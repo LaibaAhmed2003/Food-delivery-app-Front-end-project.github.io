@@ -26,13 +26,13 @@ const Home = () => {
   }, []);
   return (
     <>
-      {/* fit class for back */}
+      {/* fit className for back */}
       <div className="home">
         {/* <img src={home} alt="" />
         <a className="Order-btn" href="/burgers">
           Order Now
         </a> */}
-        <div class="content">
+        <div className="content">
           <h3>food made with love</h3>
           <p>
             Welcome to FoodFest, where culinary delight meets a feast for the
@@ -46,23 +46,23 @@ const Home = () => {
             Order Now
           </a>{" "}
         </div>
-        <div class="image">
+        <div className="image">
           <img src={home} alt="" />
         </div>
-        <section class="steps">
-          <div class="box">
+        <section className="steps">
+          <div className="box">
             <img src={step1} alt="" />
             <h3>choose your favorite food</h3>
           </div>
-          <div class="box">
+          <div className="box">
             <img src={step2} alt="" />
             <h3>free and fast delivery</h3>
           </div>
-          <div class="box">
+          <div className="box">
             <img src={step3} alt="" />
             <h3>easy payments methods</h3>
           </div>
-          <div class="box">
+          <div className="box">
             <img src={step4} alt="" />
             <h3>and finally, enjoy your food</h3>
           </div>
