@@ -69,8 +69,13 @@ const Home = () => {
         </section>
       </div>
 
+      <h2 style={{ fontWeight: "bold", fontSize: "30px", marginLeft: "74px" }}>
+        Popular Items
+      </h2>
+
       <section className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
         {/* <PopularItem/> */}
+
         {food.map((item, index) => (
           <PopularItem
             key={index}

@@ -6,6 +6,7 @@ import {
   faUser,
   faBagShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import logo from "./components/Images/navlogo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Navbar = () => {
   return (
     <div className="Header">
       <div className="leftnav">
-        <h3>FoodFest</h3>
+        <img src={logo} alt="" />
       </div>
       <div className="navlinksBar">
         <NavLink to="/" className="navlinks">
