@@ -34,9 +34,6 @@ const Navbar = () => {
           ""
         )}
 
-        {/* <NavLink to="/profile" className="navlinks">
-          Profile
-        </NavLink> */}
         {!localStorage.getItem("authToken") ? (
           <NavLink to="/signup" className="navlinks">
             Sign Up
