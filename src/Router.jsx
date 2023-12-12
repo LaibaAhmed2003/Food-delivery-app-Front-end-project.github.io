@@ -28,6 +28,7 @@ const Router = () => {
           <Route path="/burger-detail/:id" element={<BurgersDetail />} />
           <Route path="/search" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </BrowserRouter>
     </Provider>

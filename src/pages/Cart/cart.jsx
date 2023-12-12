@@ -4,6 +4,7 @@ import { removeFromCart } from "./cartAction";
 import { useDispatch, useSelector } from "react-redux";
 import CartAmountToggle from "./cartAmountToggle";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Cart = () => {
         </div>
         <div className="flex ml-4 mr-4 gap-4 mx-10">
           <div className="flex flex-col flex-1 w-[60%]">
-            {cart.map((item, index) => (
+            {cart.map((item, index) => ( 
               <div className="" key={index}>
                 <div className="flex w-[100%] h-auto items-center p-4 rounded-md shadow-sm ">
                   <img
@@ -44,7 +45,7 @@ const Cart = () => {
                         {item.title}
                       </h2>
                       <p className="text-[green]">Price: {item.price} Rs</p>
-                      <h3>Category: {item.category}</h3>
+                      <h3>Category: {item.name}</h3>
                     </div>
 
                     <CartAmountToggle
@@ -69,7 +70,7 @@ const Cart = () => {
             <h1 className="text-[2rem] text-center">Summary</h1>
             <div className="flex justify-between mt-3 w-[100%]">
               <p>Subtotal</p>
-              <p>$125</p>
+              
             </div>
             <div className="flex justify-between mt-3 w-[100%]">
               <p>Shipping</p>
@@ -77,7 +78,7 @@ const Cart = () => {
             </div>
             <div className="flex justify-between text-2xl mt-3 w-[100%]">
               <p>Total</p>
-              <p>$120</p>
+             
             </div>
             <button
               style={{
@@ -89,7 +90,11 @@ const Cart = () => {
                 marginLeft: "150px",
               }}
             >
-              Checkout
+               <Link to ="/checkout">
+            <button  class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">CHEKOUT</button></Link>
+
+            
+              
             </button>
           </div>
         </div>
