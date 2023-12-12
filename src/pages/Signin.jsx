@@ -1,80 +1,78 @@
-// import React from 'react'
+// import React from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
+import axios from "axios";
 
-// import "../index.css";
-const Signin = () => {
+const SignIn = () => {
+  const [formData, setFormData] = useState({});
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      // setLoading(true);
+
+      const res = await axios.post(
+        "http://localhost:3000/users/signin",
+        JSON.stringify(formData),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = res.data;
+      console.log(data);
+      if (data.success === false) {
+        console.log(data.message);
+        return;
+      }
+      localStorage.setItem("authToken", data.authToken);
+      console.log(localStorage.getItem("authToken"));
+      navigate("/");
+    } catch (error) {
+      console.log("SignIn", error);
+    }
   };
-
   return (
-    <>
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white mb-2">
-                Login
-              </h1>
-              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Your email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required=""
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-slate-400 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                >
-                  Login
-                </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Create an account?{" "}
-                  <NavLink to="/signup">
-                    <a
-                      href="#"
-                      className="font-medium text-primary-600 hover:underline hover:text-blue-500 dark:text-primary-500"
-                    >
-                      SignUp here
-                    </a>
-                  </NavLink>
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    <div className="p-3 max-w-lg mx-auto">
+      <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
+      <form className="flex flex-col gap-4 " onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="email"
+          className="border p-3 rounded-lg"
+          id="email"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          className="border p-3 rounded-lg"
+          id="password"
+          onChange={handleChange}
+        />
+        <button className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+          Sign In
+        </button>
+      </form>
+      <div className="flex gap-2 mt-5">
+        <p>Dont have an account?</p>
+        <Link to={"/sign-up"}>
+          <span className="text-blue-700">Sign Up</span>
+        </Link>
+      </div>
+      {/* {error && <p className="text-red-500 mt-5">{error}</p>} */}
+    </div>
   );
 };
 
-export default Signin;
+export default SignIn;
