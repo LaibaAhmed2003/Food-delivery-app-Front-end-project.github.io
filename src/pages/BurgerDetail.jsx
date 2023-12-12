@@ -4,34 +4,39 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const FoodDetail = () => {
-  const [foodDetail, setFoodDetail] = useState(null);
-  const { ID } = useParams();
-  console.log(foodDetail);
+  const [items, setFoodDetail] = useState(null);
+  console.log(items);
+  const { id } = useParams();
 
   useEffect(() => {
-    console.log('ID:', ID);
-    getData();
-  }, [] );
-    const getData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/foods/get/${ID}`);
-        setFoodDetail(response.data);
+        
+        if (id) {
+          const response = await axios.get(`http://localhost:3000/foods/${id}`);
+          setFoodDetail(response.data.food);
+        } else {
+          console.error('Invalid id:', id);
+        }
       } catch (error) {
         console.error('Error fetching food detail:', error);
       }
     };
 
-  if (!foodDetail) {
+    fetchData();
+  }, [id]);
+
+  if (!items) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className="food-detail">
-      <h2>{foodDetail.name}</h2>
-      <p>Price: ${foodDetail.price}</p>
-      <p>Category: {foodDetail.CategoryName}</p>
-      <img src={foodDetail.img} alt={foodDetail.name} />
-      <p>{foodDetail.description}</p>
+      <h2>{items.name}</h2>
+      <p>Price: ${items.price}</p>
+      
+      <img src={items.img} alt={items.name} />
+      <p>{items.dec}</p>
     </div>
   );
 };

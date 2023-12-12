@@ -1,3 +1,5 @@
+
+
 const Home = () => {
   return (
     <>
@@ -6,8 +8,12 @@ const Home = () => {
           Order Now
         </a>
       </div>
+    
     </>
+    
   );
+ 
 };
+
 
 export default Home;

@@ -12,6 +12,7 @@ import BurgersDetail from "./pages/BurgerDetail"
 import Search from "./pages/Search";
 
 
+
 const Router = () => {
   return (
     <Provider store={store}>
@@ -27,6 +28,9 @@ const Router = () => {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/burger-detail/:id" element={<BurgersDetail />} />
           <Route path="/search" element={<Search/>} />
+         
+
+          
         </Routes>
       </BrowserRouter>
     </Provider>
