@@ -17,14 +17,13 @@ const Router = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
+          <Route path="/" element={<Home />} />
           <Route path="/burgers" element={<Burgers />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
-          <Route path="/search" element={<Search />} />
           <Route path="/search" element={<Search />} />
         </Routes>
       </BrowserRouter>
