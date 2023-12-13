@@ -24,9 +24,11 @@ const FoodDetail = () => {
         setFoodDetail(null); // Set to null in case of an error
       }
     };
+    
 
     fetchData();
   }, [id]);
+  
   const cartHandler = (item) => {
     const cartItem = {
       id: item._id,
@@ -38,18 +40,19 @@ const FoodDetail = () => {
  
     dispatch(addToCart(cartItem));
   };
-
   if (!foodDetail) {
     return <div>Loading...</div>;
   }
+ 
+
   return (
     <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
        <img src={foodDetail.img} alt={foodDetail.name} />
       <h2>{foodDetail.name}</h2>
       <p>Price: ${foodDetail.price}</p>
        
-      {/* <p>{foodDetail.description
-}</p> */}
+      <p>{foodDetail.description
+}</p> 
 
 <Link to="/cart">
               <button
