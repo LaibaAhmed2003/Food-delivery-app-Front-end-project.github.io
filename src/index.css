@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0.5px 0.5px 1.5px grey;
+  box-shadow: 0.5px 0.5px 2.5px gray;
 }
 .leftnav img {
   margin-left: 15px;
