@@ -1,28 +1,18 @@
-// Import necessary dependencies
-import React, { useState } from "react"; // Import useState hook
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-// Define the Checkout component
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
-  // Retrieve the cart from the Redux store
   const cart = useSelector((state) => state.cart.cart);
-
-  // Calculate subtotal
   const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
-
-  // Shipping cost
   const shippingCost = 200;
 
-  // Calculate total
   const total = subtotal + shippingCost;
 
   const handlePlaceOrder = () => {
-    // Simulate order placement logic
     console.log("Order placed!");
-    setOrderPlaced(true); // Set the orderPlaced state to true
+    setOrderPlaced(true);
   };
-  // Return the JSX structure for the Checkout component
   return (
     <>
       <div style={{ marginTop: "60px", display: "flex", padding: "0px 44px" }}>
@@ -32,7 +22,7 @@ const Checkout = () => {
             <p className="text-gray-400">
               Check your items. And select a suitable shipping method.
             </p>
-            {/* Mapping through the items in the cart */}
+
             {cart.map((item, index) => (
               <div className="" key={index}>
                 <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
@@ -231,5 +221,4 @@ const Checkout = () => {
   );
 };
 
-// Export the Checkout component
 export default Checkout;

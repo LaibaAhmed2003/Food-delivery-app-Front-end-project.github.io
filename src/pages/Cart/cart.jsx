@@ -44,7 +44,7 @@ const Cart = () => {
 
   const calculateTotal = () => {
     const subtotal = calculateSubtotal();
-    const shippingCost = 200; // Fixed shipping cost, replace with actual logic
+    const shippingCost = 200;
     return subtotal + shippingCost;
   };
 

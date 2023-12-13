@@ -1,14 +1,10 @@
-// import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import axios from "axios";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({});
-
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,8 +14,6 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // setLoading(true);
-
       const res = await axios.post(
         "http://localhost:3000/users/signin",
         JSON.stringify(formData),
@@ -52,6 +46,7 @@ const SignIn = () => {
           className="border p-3 rounded-lg"
           id="email"
           onChange={handleChange}
+          required
         />
         <input
           type="password"
@@ -59,6 +54,7 @@ const SignIn = () => {
           className="border p-3 rounded-lg"
           id="password"
           onChange={handleChange}
+          required
         />
         <button className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
           Sign In
@@ -70,7 +66,6 @@ const SignIn = () => {
           <span className="text-blue-700">Sign Up</span>
         </Link>
       </div>
-      {/* {error && <p className="text-red-500 mt-5">{error}</p>} */}
     </div>
   );
 };

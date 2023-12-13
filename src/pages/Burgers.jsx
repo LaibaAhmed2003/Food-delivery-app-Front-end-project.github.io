@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import FoodCard from "../components/foodcard";
 
-
 const Burgers = () => {
   const [Food, setFood] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
-  
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     getData();
@@ -15,7 +13,7 @@ const Burgers = () => {
   const getData = async () => {
     try {
       const resp = await axios.get("http://localhost:3000/foods/get");
-      const responseData = resp.data.myData; 
+      const responseData = resp.data.myData;
       console.log(responseData);
       setFood(responseData);
     } catch (e) {
@@ -25,7 +23,8 @@ const Burgers = () => {
 
   const filterFood = () => {
     return Food.filter(
-      (item) => item.name && item.name.toLowerCase().includes(searchInput.toLowerCase())
+      (item) =>
+        item.name && item.name.toLowerCase().includes(searchInput.toLowerCase())
     );
   };
 
@@ -35,10 +34,6 @@ const Burgers = () => {
   };
 
   const filteredFood = filterFood();
-
-  
- 
-  
 
   return (
     <div className="main-contain">
@@ -50,10 +45,7 @@ const Burgers = () => {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button
-          className=""
-          onClick={handleSearch}
-        >
+        <button className="" onClick={handleSearch}>
           Search
         </button>
       </div>
@@ -69,7 +61,6 @@ const Burgers = () => {
               CategoryName={item.CategoryName}
               id={item._id}
             />
-            
           </div>
         ))}
       </div>

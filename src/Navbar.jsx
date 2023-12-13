@@ -28,7 +28,16 @@ const Navbar = () => {
         <NavLink to="/burgers" className="navlinks">
           Menu
         </NavLink>
-
+        <NavLink to="/search" className="nav-icons hover:text-red-500">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </NavLink>
+        {localStorage.getItem("authToken") ? (
+          <NavLink to="/cart" className="nav-icons hover:text-red-500">
+            <FontAwesomeIcon icon={faBagShopping} />
+          </NavLink>
+        ) : (
+          ""
+        )}
         {!localStorage.getItem("authToken") ? (
           <NavLink to="/signup" className="navlinks">
             Sign Up
@@ -41,16 +50,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faRightFromBracket} />
           </a>
         )}
-        <NavLink to="/search" className="nav-icons hover:text-red-500">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </NavLink>
-        {localStorage.getItem("authToken") ? (
-          <NavLink to="/cart" className="nav-icons hover:text-red-500">
-            <FontAwesomeIcon icon={faBagShopping} />
-          </NavLink>
-        ) : (
-          ""
-        )}
+
         {/* {localStorage.getItem("authToken") ? (
           <NavLink to="/profile" className="nav-icons hover:text-red-500">
             <FontAwesomeIcon icon={faUser} />
