@@ -5,6 +5,7 @@ import {
   faMagnifyingGlass,
   faUser,
   faBagShopping,
+  faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "./components/Images/navlogo.png";
 
@@ -27,13 +28,6 @@ const Navbar = () => {
         <NavLink to="/burgers" className="navlinks">
           Menu
         </NavLink>
-        {localStorage.getItem("authToken") ? (
-          <NavLink to="/myorder" className="navlinks">
-            My Orders
-          </NavLink>
-        ) : (
-          ""
-        )}
 
         {!localStorage.getItem("authToken") ? (
           <NavLink to="/signup" className="navlinks">
@@ -41,34 +35,31 @@ const Navbar = () => {
           </NavLink>
         ) : (
           <a
-            className="navlinks cursor-pointer hover:text-red-500"
+            className="nav-icons cursor-pointer hover:text-red-500"
             onClick={handlelogout}
           >
-            Logout
+            <FontAwesomeIcon icon={faRightFromBracket} />
           </a>
         )}
-      </div>
-
-      <div className="rightdiv">
-        <NavLink to="/search" className="nav-icons">
+        <NavLink to="/search" className="nav-icons hover:text-red-500">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </NavLink>
         {localStorage.getItem("authToken") ? (
-          <NavLink to="/cart" className="nav-icons">
+          <NavLink to="/cart" className="nav-icons hover:text-red-500">
             <FontAwesomeIcon icon={faBagShopping} />
           </NavLink>
         ) : (
           ""
         )}
-        {localStorage.getItem("authToken") ? (
-          <NavLink to="/profile" className="nav-icons">
+        {/* {localStorage.getItem("authToken") ? (
+          <NavLink to="/profile" className="nav-icons hover:text-red-500">
             <FontAwesomeIcon icon={faUser} />
           </NavLink>
         ) : (
           ""
-        )}
+        )} */}
         {localStorage.getItem("authToken") ? (
-          <NavLink to="/checkout">Checkout</NavLink>
+          <NavLink to="/checkout"></NavLink>
         ) : (
           ""
         )}

@@ -49,24 +49,6 @@ const Home = () => {
         <div className="image">
           <img src={home} alt="" />
         </div>
-        <section className="steps">
-          <div className="box">
-            <img src={step1} alt="" />
-            <h3>choose your favorite food</h3>
-          </div>
-          <div className="box">
-            <img src={step2} alt="" />
-            <h3>free and fast delivery</h3>
-          </div>
-          <div className="box">
-            <img src={step3} alt="" />
-            <h3>easy payments methods</h3>
-          </div>
-          <div className="box">
-            <img src={step4} alt="" />
-            <h3>and finally, enjoy your food</h3>
-          </div>
-        </section>
       </div>
 
       <h2 style={{ fontWeight: "bold", fontSize: "30px", marginLeft: "74px" }}>
@@ -89,9 +71,27 @@ const Home = () => {
         ))}
       </section>
       <div className="w-full flex justify-center">
-        <NavLink to="/burgers">
+        {/* <NavLink to="/burgers">
           <a className=" text-blue-700 ">Show More</a>
-        </NavLink>
+        </NavLink> */}
+        <section className="steps">
+          <div className="box">
+            <img src={step1} alt="" />
+            <h3>choose your favorite food</h3>
+          </div>
+          <div className="box">
+            <img src={step2} alt="" />
+            <h3>free and fast delivery</h3>
+          </div>
+          <div className="box">
+            <img src={step3} alt="" />
+            <h3>easy payments methods</h3>
+          </div>
+          <div className="box">
+            <img src={step4} alt="" />
+            <h3>and finally, enjoy your food</h3>
+          </div>
+        </section>
       </div>
       <br />
     </>

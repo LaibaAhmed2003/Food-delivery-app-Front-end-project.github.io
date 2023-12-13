@@ -24,19 +24,6 @@ const Cart = () => {
     dispatch(removeFromCart(id));
   };
 
-  // const setDecrease = (id) => {
-  //   setAmounts((prevAmounts) => ({
-  //     ...prevAmounts,
-  //     [id]: prevAmounts[id] > 1 ? prevAmounts[id] - 1 : 1,
-  //   }));
-  // };
-
-  // const setIncrease = (id) => {
-  //   setAmounts((prevAmounts) => ({
-  //     ...prevAmounts,
-  //     [id]: prevAmounts[id] < 10 ? prevAmounts[id] + 1 : 10,
-  //   }));
-  // };
   const setDecrease = (id) => {
     setAmounts((prevAmounts) => ({
       ...prevAmounts,
@@ -63,44 +50,37 @@ const Cart = () => {
 
   return (
     <div className="bg-[#faf9f9]">
-      <section>
-        <div className="flex justify-between text-2xl p-5 mx-10 ">
+      <section className="container mx-auto p-4 sm:p-8">
+        <div className="flex flex-col sm:flex-row justify-between text-2xl mb-4 sm:mb-8">
           <h1>Food Shopping Cart</h1>
-          <p className="underline text-lg hover:cursor-pointer text-center mr-12">
+          <p className="underline text-lg hover:cursor-pointer text-center sm:text-right">
             You have <span className="text-blue-500">{cart.length}</span> items
             in the shopping cart
           </p>
         </div>
-        <div className="flex ml-4 mr-4 gap-4 mx-10">
-          <div className="flex flex-col flex-1 w-[60%]">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex-1">
             {cart.map((item, index) => (
-              <div className="" key={index}>
-                <div className="flex w-[100%] h-auto items-center p-4 rounded-md shadow-sm ">
+              <div className="mb-4" key={index}>
+                <div className="flex w-full h-auto items-center p-4 rounded-md shadow-sm">
                   <img
-                    className="w-[7.3rem] h-[80%] rounded-lg shadow-lg hover:scale-[1.1] ease-in duration-300 mix-blend-multiply"
+                    className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg shadow-lg hover:scale-[1.1] ease-in duration-300 mix-blend-multiply"
                     src={item.image}
                     alt=""
                   />
-                  <div className="flex gap-40 ml-5 h-auto justify-between ">
-                    <div className="flex flex-col">
-                      <h2 className="cart-product-title text-xl">
-                        {item.title}
-                      </h2>
-                      <p className="text-[green]">Price: {item.price} Rs</p>
-                      <h3>Category: {item.name}</h3>
-                    </div>
-                    {/* <CartAmountToggle
-                      amount={amounts[item.id]}
-                      setIncrease={() => setIncrease(item.id)}
-                      setDecrease={() => setDecrease(item.id)}
-                    /> */}
+                  <div className="flex flex-col ml-4 w-full">
+                    <h2 className="cart-product-title text-lg sm:text-xl">
+                      {item.title}
+                    </h2>
+                    <p className="text-[green]">Price: {item.price} Rs</p>
+                    <h3>Category: {item.name}</h3>
                     <CartAmountToggle
                       itemId={item.id}
                       amount={amounts[item.id]}
                       setIncrease={() => setIncrease(item.id)}
                       setDecrease={() => setDecrease(item.id)}
                     />
-                    <div className="remove-item cursor-pointer">
+                    <div className="remove-item cursor-pointer mt-2 sm:mt-0">
                       <FontAwesomeIcon
                         icon={faTrash}
                         className="text-red-500"
@@ -109,35 +89,36 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                <hr className="cart-hr" />
+                <hr className="cart-hr mt-2" />
               </div>
             ))}
           </div>
-          <div className="flex-[0.4] w-auto h-[40vh] border-2 border-[white-400] rounded-md shadow-md p-6 mx-10 bg-[white]">
-            <h1 className="text-[2rem] text-center">Summary</h1>
-            <div className="flex justify-between mt-3 w-[100%]">
-              <p>Subtotal</p>
-              <p>{calculateSubtotal()} Rs</p>
+          <div className="w-full sm:w-[25%] border-2 border-[white-400] rounded-md shadow-md p-6 bg-[white]">
+            <div className="summary">
+              <h1 className="text-2xl text-center mb-4">Summary</h1>
+              <div className="flex justify-between mb-4">
+                <p>Subtotal</p>
+                <p>{calculateSubtotal()} Rs</p>
+              </div>
+              <div className="flex justify-between mb-4">
+                <p>Shipping</p>
+                <p>{200} Rs</p>
+              </div>
+              <div className="flex justify-between text-2xl mb-4">
+                <p>Total</p>
+                <p>{calculateTotal()} Rs</p>
+              </div>
+              <button>
+                <Link to="/checkout">
+                  <button className="btnn mx-5">CHECKOUT</button>
+                </Link>
+              </button>
             </div>
-            <div className="flex justify-between mt-3 w-[100%]">
-              <p>Shipping</p>
-              <p>{200} Rs</p>
-            </div>
-            <div className="flex justify-between text-2xl mt-3 w-[100%]">
-              <p>Total</p>
-              <p>{calculateTotal()} Rs</p>
-            </div>
-            <button>
-              <Link to="/checkout">
-                <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  CHECKOUT
-                </button>
-              </Link>
-            </button>
           </div>
         </div>
       </section>
     </div>
   );
 };
+
 export default Cart;

@@ -21,8 +21,8 @@
   box-shadow: 0.5px 0.5px 2.5px gray;
 }
 .leftnav img {
-  margin-left: 15px;
-  width: 200px;
+  margin-left: 35px;
+  width: 120px;
   height: 120px;
   background-blend-mode: lighten;
 }
@@ -45,11 +45,14 @@
   margin-right: 60px;
 }
 .nav-icons {
+  background-color: #f5e35a;
+  border-radius: 50%;
   text-decoration: none;
   margin: 4px;
-  padding: 4px;
+  padding: 10px;
   color: black;
   font-weight: 100;
+  width: 300px;
 }
 .fit {
   height: 500px;
@@ -131,8 +134,8 @@
 .btnn {
   display: inline-block;
   padding: 0.5rem 2rem;
-  border: 0.1rem solid red;
-  color: red;
+  border: 0.1rem solid rgb(161, 63, 63);
+  color: rgb(161, 63, 63);
   cursor: pointer;
   font-size: 1.1rem;
   border-radius: 0.5rem;
@@ -148,7 +151,7 @@
   right: 0;
   width: 0%;
   height: 100%;
-  background: red;
+  background: rgb(161, 63, 63);
   transition: 0.3s linear;
   z-index: -1;
 }
@@ -377,7 +380,7 @@ ul {
 .footer-links {
   padding-left: 0;
   list-style: none;
-  color: red;
+  color: rgb(161, 63, 63);
 }
 .footer-links li {
   display: block;
@@ -404,7 +407,7 @@ ul {
   margin-left: 6px;
   margin-right: 0;
   border-radius: 100%;
-  background-color: #fd0000;
+  background-color: rgb(161, 63, 63);
 }
 .copyright-text {
   margin: 0;
@@ -484,4 +487,8 @@ ul {
     margin-right: 0;
     font-weight: 600;
   }
+}
+.summary {
+  background-color: #f1ebdc;
+  padding: 30px;
 }
