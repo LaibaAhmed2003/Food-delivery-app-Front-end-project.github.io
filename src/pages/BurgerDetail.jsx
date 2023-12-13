@@ -48,7 +48,7 @@ const FoodDetail = () => {
     <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
       <img src={foodDetail.img} alt={foodDetail.name} />
       <h2>{foodDetail.name}</h2>
-      <p>Price: ${foodDetail.price}</p>
+      <p>Price:{foodDetail.price}</p>
       <p>{foodDetail.description}</p>
 
       <Link to="/cart">
