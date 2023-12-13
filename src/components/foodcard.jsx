@@ -6,7 +6,7 @@ const ProductCard = ({ name, price, img, dec, CategoryName, id}) => {
       <Link
         to={`/burgerdetail/${id}`}
         className="btn btn-primary product-btn"
-      > view details</Link>
+      > 
       <img
         src={img}
         alt="Food"
@@ -25,12 +25,10 @@ const ProductCard = ({ name, price, img, dec, CategoryName, id}) => {
             <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
           </del>
 
-          <Link
-            to={`/burger-detail/${id}`}
-            className="btn btn-primary product-btn"
-          ></Link>
+         
         </div>
       </div>
+      </Link>
     </div>
   );
 };
