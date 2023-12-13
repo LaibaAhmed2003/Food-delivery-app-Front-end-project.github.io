@@ -31,27 +31,28 @@ const FoodDetail = () => {
     fetchData();
   }, [id]);
 
-  const cartHandler = (item) => {
-    const cartItem = {
-      id: foodDetail._id,
-      name: foodDetail.name,
-      price: foodDetail.price,
-      image: foodDetail.img,
-      dec: foodDetail.description,
-    };
-
-    dispatch(addToCart(cartItem));
-  };
+  
 
   if (!foodDetail) {
     return <div>Loading...</div>;
   }
+  const cartHandler = (item) => {
+    const cartItem = {
+      id: item._id,
+      name: item.name,
+      price: item.price,
+      image: item.img,
+      dec: item.description,
+    };
+ 
+    dispatch(addToCart(cartItem));
+  };
 
   return (
     <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
        <img src={foodDetail.img} alt={foodDetail.name} />
       <h2>{foodDetail.name}</h2>
-      <p>Price: ${foodDetail.price}</p>
+      <p>Price: {foodDetail.price}</p>
        
       <p>{foodDetail.description
 }</p> 
