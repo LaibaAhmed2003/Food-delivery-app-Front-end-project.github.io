@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const CartAmountToggle = ({ itemId, amount, setDecrease, setIncrease }) => {
+const CartAmountToggle = ({ id, amount, setDecrease, setIncrease }) => {
   return (
     <div className="cart-btn ">
       <div className="amount-toggle flex gap-4">
-        <button onClick={() => setDecrease(itemId)}>
+        <button onClick={() => setDecrease(id)}>
           <FontAwesomeIcon
             icon={faMinus}
             className="minus"
@@ -13,7 +13,7 @@ const CartAmountToggle = ({ itemId, amount, setDecrease, setIncrease }) => {
           />
         </button>
         <div className="amount-style">{amount}</div>
-        <button onClick={() => setIncrease(itemId)}>
+        <button onClick={() => setIncrease(id)}>
           <FontAwesomeIcon
             icon={faPlus}
             className="add"
