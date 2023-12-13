@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import FoodCard from "../components/foodcard";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "./Cart/cartAction";
+
 
 const Burgers = () => {
   const [Food, setFood] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  const dispatch = useDispatch();
+  
 
   useEffect(() => {
     getData();
@@ -38,17 +36,9 @@ const Burgers = () => {
 
   const filteredFood = filterFood();
 
-  const cartHandler = (item) => {
-    const cartItem = {
-      id: item._id,
-      name: item.name,
-      price: item.price,
-      image: item.img,
-      dec: item.description,
-    };
+  
  
-    dispatch(addToCart(cartItem));
-  };
+  
 
   return (
     <div className="main-contain">
@@ -79,14 +69,7 @@ const Burgers = () => {
               CategoryName={item.CategoryName}
               id={item._id}
             />
-            <Link to="/cart">
-              <button
-                className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                onClick={() => cartHandler(item)}
-              >
-                add to card
-              </button>
-            </Link>
+            
           </div>
         ))}
       </div>
