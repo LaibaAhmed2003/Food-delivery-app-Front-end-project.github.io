@@ -9,7 +9,6 @@ import store from "./pages/Cart/Store";
 import { Provider } from "react-redux";
 import Checkout from "./pages/Checkout";
 import BurgersDetail from "./pages/BurgerDetail";
-import Search from "./pages/Search";
 import Footer from "./components/footer";
 
 const Router = () => {
@@ -17,17 +16,18 @@ const Router = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/burgers" element={<Burgers />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/footer" element={<Footer />} />
-        </Routes>
+        <div className="main-content">
+          <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/burgers" element={<Burgers />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
+          </Routes>
+        </div>
+        <Footer />
       </BrowserRouter>
     </Provider>
   );

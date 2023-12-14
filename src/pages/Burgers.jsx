@@ -37,17 +37,20 @@ const Burgers = () => {
 
   return (
     <div className="main-contain">
-      <div className="">
+      <div className="" style={{ textAlign: "center", padding: "24px" }}>
         <input
           className=""
+          style={{
+            border: "1px solid black",
+            padding: "10px",
+            borderRadius: "4px",
+            width: "700px",
+          }}
           type="text"
-          placeholder="Search..."
+          placeholder="Search Food here..."
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button className="" onClick={handleSearch}>
-          Search
-        </button>
       </div>
       <h1 className="Food-heading"></h1>
       <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
