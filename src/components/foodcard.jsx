@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 
+<<<<<<< HEAD
 const ProductCard = ({ name, price, img, id }) => {
+=======
+const ProductCard = ({ name, price, img, dec, CategoryName, id}) => {
+>>>>>>> 5a3568abb8aff0bbeabb11cc2687f6778ce6f8ae
   return (
     <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
       <Link
-        to={`/burger-detail/${id}`}
+        to={`/burgerdetail/${id}`}
         className="btn btn-primary product-btn"
-      ></Link>
+      > 
       <img
         src={img}
         alt="Food"
@@ -25,12 +29,10 @@ const ProductCard = ({ name, price, img, id }) => {
             <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
           </del>
 
-          <Link
-            to={`/burger-detail/${id}`}
-            className="btn btn-primary product-btn"
-          ></Link>
+         
         </div>
       </div>
+      </Link>
     </div>
   );
 };
