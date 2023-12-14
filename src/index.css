@@ -492,3 +492,17 @@ ul {
   background-color: #f1ebdc;
   padding: 30px;
 }
+
+.food-detail {
+  background-color: white;
+  padding: 84px;
+}
+.food-detail img {
+  width: 400px;
+  height: 400px;
+}
+
+.food-detail h2 {
+  font-size: 34px;
+  font-weight: bold;
+}
