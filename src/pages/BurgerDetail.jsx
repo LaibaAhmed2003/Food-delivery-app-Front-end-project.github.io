@@ -30,42 +30,6 @@ const FoodDetail = () => {
     fetchData();
   }, [id]);
 
-<<<<<<< HEAD
-  
-
-  if (!foodDetail) {
-    return <div>Loading...</div>;
-  }
-  const cartHandler = (item) => {
-    const cartItem = {
-      id: item._id,
-      name: item.name,
-      price: item.price,
-      image: item.img,
-      dec: item.description,
-    };
- 
-    dispatch(addToCart(cartItem));
-  };
-
-  return (
-    <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
-       <img src={foodDetail.img} alt={foodDetail.name} />
-      <h2>{foodDetail.name}</h2>
-      <p>Price: {foodDetail.price}</p>
-       
-      <p>{foodDetail.description
-}</p> 
-
-<Link to="/cart">
-              <button
-                className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                onClick={() => cartHandler(item)}
-              >
-                add to card
-              </button>
-            </Link>
-=======
   if (!foodDetail) {
     return <div>Loading...</div>;
   }
@@ -96,7 +60,6 @@ const FoodDetail = () => {
           </button>
         </Link>
       </div>
->>>>>>> c3134927ce15a242a05179674b725beb5782682b
     </div>
   );
 };
