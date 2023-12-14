@@ -1,7 +1,6 @@
 import axios from "axios";
 import PopularItem from "../components/PopularItem";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import home from "../components/Images/home-img.png";
 import step1 from "../components/Images/step-1.jpg";
 import step2 from "../components/Images/step-2.jpg";
@@ -26,12 +25,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      {/* fit className for back */}
       <div className="home">
-        {/* <img src={home} alt="" />
-        <a className="Order-btn" href="/burgers">
-          Order Now
-        </a> */}
         <div className="content">
           <h3>food made with love</h3>
           <p>
@@ -44,7 +38,7 @@ const Home = () => {
           </p>
           <a className="btnn" href="/burgers">
             Order Now
-          </a>{" "}
+          </a>
         </div>
         <div className="image">
           <img src={home} alt="" />
@@ -71,9 +65,6 @@ const Home = () => {
         ))}
       </section>
       <div className="w-full flex justify-center">
-        {/* <NavLink to="/burgers">
-          <a className=" text-blue-700 ">Show More</a>
-        </NavLink> */}
         <section className="steps">
           <div className="box">
             <img src={step1} alt="" />

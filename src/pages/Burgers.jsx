@@ -36,8 +36,10 @@ const Burgers = () => {
   };
 
   return (
-    <div className="main-contain">
-      <h1 className="Food-heading"></h1>
+    <div className="main-contain mt-6">
+      <h1 style={{ textAlign: "center", fontSize: "34px", fontWeight: "bold" }}>
+        Menu
+      </h1>
       <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
         {Food.map((item, index) => (
           <div key={index}>
