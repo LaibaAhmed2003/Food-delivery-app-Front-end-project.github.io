@@ -496,6 +496,9 @@ ul {
 .food-detail {
   background-color: white;
   padding: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .food-detail img {
   width: 400px;
