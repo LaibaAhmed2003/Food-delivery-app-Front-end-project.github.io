@@ -19,7 +19,7 @@ const ProductCard = ({ name, price, img, dec, CategoryName, id }) => {
               {price}
             </p>
             <del>
-              <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
+              <p className="text-sm text-gray-600 cursor-auto ml-2">Rs199</p>
             </del>
           </div>
         </div>
