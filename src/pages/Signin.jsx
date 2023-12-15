@@ -31,7 +31,7 @@ const SignIn = () => {
       }
       localStorage.setItem("authToken", data.authToken);
       console.log(localStorage.getItem("authToken"));
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       console.log("SignIn", error);
     }

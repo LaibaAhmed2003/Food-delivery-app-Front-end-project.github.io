@@ -51,13 +51,13 @@ const Navbar = () => {
           </a>
         )}
 
-        {/* {localStorage.getItem("authToken") ? (
+        {localStorage.getItem("authToken") ? (
           <NavLink to="/profile" className="nav-icons hover:text-red-500">
             <FontAwesomeIcon icon={faUser} />
           </NavLink>
         ) : (
           ""
-        )} */}
+        )}
         {localStorage.getItem("authToken") ? (
           <NavLink to="/checkout"></NavLink>
         ) : (

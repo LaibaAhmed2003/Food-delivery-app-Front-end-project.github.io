@@ -9,6 +9,7 @@ import store from "./pages/Cart/Store";
 import { Provider } from "react-redux";
 import Checkout from "./pages/Checkout";
 import BurgersDetail from "./pages/BurgerDetail";
+import Profile from "./pages/Profile";
 import Footer from "./components/footer";
 
 const Router = () => {
@@ -25,6 +26,7 @@ const Router = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
         <Footer />
