@@ -29,6 +29,7 @@ const ContactForm = () => {
 
   return (
     <div>
+      <h1 className="contact-heading">Contact Us</h1>
       {!submitted ? (
         <form className="contact-form" onSubmit={formik.handleSubmit}>
           <input
