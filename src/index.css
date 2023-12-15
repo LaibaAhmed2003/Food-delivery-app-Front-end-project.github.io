@@ -545,3 +545,38 @@ ul {
 .submit-button:hover {
   background-color: #45a049;
 }
+
+.storymaindiv {
+  height: 400px;
+  background-image: url("https://images.pexels.com/photos/1199959/pexels-photo-1199959.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+.storymaindiv h1 {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.storycontent {
+  padding: 20px 120px;
+  text-align: center;
+}
+.storycontent h2 {
+  margin: 4px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.storycontent p {
+  margin: 4px;
+  padding: 20px;
+  font-weight: 500;
+  color: rgb(84, 83, 83);
+}

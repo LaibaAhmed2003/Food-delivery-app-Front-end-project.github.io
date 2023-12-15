@@ -12,6 +12,7 @@ import BurgersDetail from "./pages/BurgerDetail";
 import Profile from "./pages/Profile";
 import Footer from "./components/footer";
 import ContactForm from "./pages/Contact";
+import OurStory from "./pages/Ourstory";
 
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
             <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<ContactForm />} />
+            <Route path="/ourstory" element={<OurStory />} />
           </Routes>
         </div>
         <Footer />
