@@ -509,3 +509,39 @@ ul {
   font-size: 34px;
   font-weight: bold;
 }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 40px 70px;
+}
+.contact-heading {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.input-form {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-form.error {
+  border-color: #ff0000; /* Red border for error */
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}

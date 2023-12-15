@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import BurgersDetail from "./pages/BurgerDetail";
 import Profile from "./pages/Profile";
 import Footer from "./components/footer";
+import ContactForm from "./pages/Contact";
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<ContactForm />} />
           </Routes>
         </div>
         <Footer />
