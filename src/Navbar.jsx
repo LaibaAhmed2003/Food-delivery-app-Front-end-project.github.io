@@ -28,16 +28,8 @@ const Navbar = () => {
         <NavLink to="/burgers" className="navlinks">
           Menu
         </NavLink>
-<<<<<<< HEAD
-        <NavLink to="/categories" className="navlinks">
-          Categories
-        </NavLink>
-        <NavLink to="/search" className="nav-icons hover:text-red-500">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-=======
         <NavLink to="/ourstory" className="navlinks">
           Our Story
->>>>>>> 10074fd1252ea9a97e7c228a3ba31d05c38bec5e
         </NavLink>
         <NavLink to="/contact" className="navlinks">
           Contact Us

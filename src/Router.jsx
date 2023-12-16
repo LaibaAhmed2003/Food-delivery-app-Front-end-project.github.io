@@ -9,18 +9,13 @@ import store from "./pages/Cart/Store";
 import { Provider } from "react-redux";
 import Checkout from "./pages/Checkout";
 import BurgersDetail from "./pages/BurgerDetail";
-<<<<<<< HEAD
-import PopularDetail from "./pages/populardetails";
-import Footer from "./components/footer";
-import Categories from "./components/categories";
-import CategoryItems from "./pages/categoryItems";
-
-=======
 import Profile from "./pages/Profile";
 import Footer from "./components/footer";
 import ContactForm from "./pages/Contact";
 import OurStory from "./pages/Ourstory";
->>>>>>> 10074fd1252ea9a97e7c228a3ba31d05c38bec5e
+import Category from "./components/categories";
+import CategoryItems from "./pages/categoryItems";
+import PopularDetail from "./pages/populardetails";
 
 const Router = () => {
   return (
@@ -33,18 +28,15 @@ const Router = () => {
             <Route path="/signin" element={<Signin />} />
             <Route path="/" element={<Home />} />
             <Route path="/burgers" element={<Burgers />} />
-            <Route path="/Categories" element={<Categories />} />
+            <Route path="/Categories" element={<Category />} />
             <Route path="/Categories/:categoryName" element={<CategoryItems />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
-<<<<<<< HEAD
-            <Route path="/populardetail/:id" element={<PopularDetail />} />
-=======
+            <Route path="/populardetail/:id" element={<PopularDetail/>} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/ourstory" element={<OurStory />} />
->>>>>>> 10074fd1252ea9a97e7c228a3ba31d05c38bec5e
           </Routes>
         </div>
         <Footer />
