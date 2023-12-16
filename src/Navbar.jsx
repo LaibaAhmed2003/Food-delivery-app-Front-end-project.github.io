@@ -28,6 +28,9 @@ const Navbar = () => {
         <NavLink to="/burgers" className="navlinks">
           Menu
         </NavLink>
+        <NavLink to="/categories" className="navlinks">
+          Categories
+        </NavLink>
         <NavLink to="/search" className="nav-icons hover:text-red-500">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </NavLink>

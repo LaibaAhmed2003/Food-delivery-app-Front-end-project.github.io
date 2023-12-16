@@ -1,20 +1,35 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import FoodCard from "../components/foodcard";
+import Category from "../components/categories";
+import { useParams } from "react-router-dom";
 
 const Burgers = () => {
   const [Food, setFood] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const { categoryName } = useParams();
+  const [selectedCategory, setSelectedCategory] = useState(categoryName);
+  console.log(selectedCategory);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [selectedCategory]); // Add selectedCategory as a dependency to refetch data when category changes
+
+  const handleSelectCategory = (categoryId) => {
+    setSelectedCategory(categoryId);
+  };
 
   const getData = async () => {
     try {
-      const resp = await axios.get("http://localhost:3000/foods/get");
+      let url = "http://localhost:3000/foods/get";
+
+      // If a category is selected, modify the URL to fetch foods of that category
+      if (selectedCategory) {
+        url += `/category/${selectedCategory}`;
+      }
+
+      const resp = await axios.get(url);
       const responseData = resp.data.myData;
-      console.log(responseData);
       setFood(responseData);
     } catch (e) {
       console.error("Error fetching data:", e);
@@ -24,19 +39,16 @@ const Burgers = () => {
   const filterFood = () => {
     return Food.filter(
       (item) =>
-        item.name && item.name.toLowerCase().includes(searchInput.toLowerCase())
+        item.name &&
+        item.name.toLowerCase().includes(searchInput.toLowerCase())
     );
-  };
-
-  const handleSearch = () => {
-    // No need for the onSearch condition
-    // You can perform search-related logic here if needed
   };
 
   const filteredFood = filterFood();
 
   return (
     <div className="main-contain">
+      <Category onSelectCategory={handleSelectCategory} />
       <div className="" style={{ textAlign: "center", padding: "24px" }}>
         <input
           className=""
@@ -52,7 +64,6 @@ const Burgers = () => {
           onChange={(e) => setSearchInput(e.target.value)}
         />
       </div>
-      <h1 className="Food-heading"></h1>
       <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
         {filteredFood.map((item) => (
           <div key={item._id}>

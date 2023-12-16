@@ -9,7 +9,11 @@ import store from "./pages/Cart/Store";
 import { Provider } from "react-redux";
 import Checkout from "./pages/Checkout";
 import BurgersDetail from "./pages/BurgerDetail";
+import PopularDetail from "./pages/populardetails";
 import Footer from "./components/footer";
+import Categories from "./components/categories";
+import CategoryItems from "./pages/categoryItems";
+
 
 const Router = () => {
   return (
@@ -22,9 +26,12 @@ const Router = () => {
             <Route path="/signin" element={<Signin />} />
             <Route path="/" element={<Home />} />
             <Route path="/burgers" element={<Burgers />} />
+            <Route path="/Categories" element={<Categories />} />
+            <Route path="/Categories/:categoryName" element={<CategoryItems />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/burgerdetail/:id" element={<BurgersDetail />} />
+            <Route path="/populardetail/:id" element={<PopularDetail />} />
           </Routes>
         </div>
         <Footer />

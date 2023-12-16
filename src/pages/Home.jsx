@@ -60,7 +60,7 @@ const Home = () => {
             category={item.CategoryName}
             img={item.img}
             dec={item.description}
-            id={item.id}
+            id={item._id}
           />
         ))}
       </section>

@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 const PopularItem = ({ name, price, img, id }) => {
   return (
     <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl cursor-pointer">
+      <Link to={`/populardetail/${id}`} className="btn btn-primary product-btn">
       <img
         src={img}
         alt="Food"
@@ -20,9 +23,14 @@ const PopularItem = ({ name, price, img, id }) => {
           <del>
             <p className="text-sm text-red-600 cursor-auto ml-2">1199Rs</p>
           </del>
+          
         </div>
+        
+
       </div>
+      </Link>
     </div>
+    
   );
 };
 
