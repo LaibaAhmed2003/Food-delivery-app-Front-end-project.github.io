@@ -67,32 +67,33 @@ const Cart = () => {
               <div className="flex w-full h-auto items-center p-4 rounded-md shadow-sm">
                 <div className="flex-1">
                   {cart.map((item, index) => (
-                    <div className="mb-4" key={index}>
+                    <div className="cart-page flex mb-4" key={index}>
                       <img
                         className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg shadow-lg hover:scale-[1.1] ease-in duration-300 mix-blend-multiply"
                         src={item.image}
                         alt=""
                       />
-                      <div className="flex flex-col ml-4 w-full">
-                        <h2 className="cart-product-title text-lg sm:text-xl">
-                          {item.title}
-                        </h2>
-                        <p className="text-[green]">Price: {item.price} Rs</p>
-                        <h3>Category: {item.name}</h3>
-                        <CartAmountToggle
-                          itemId={item.id}
-                          amount={amounts[item.id]}
-                          setIncrease={() => setIncrease(item.id)}
-                          setDecrease={() => setDecrease(item.id)}
+                      {/* <div className="flex flex-col ml-4 w-full"> */}
+                      <h3>{item.name}</h3>
+                      <h2 className="cart-product-title text-lg sm:text-xl">
+                        {item.title}
+                      </h2>
+                      <p className="text-[green]">{item.price} Rs</p>
+
+                      <CartAmountToggle
+                        itemId={item.id}
+                        amount={amounts[item.id]}
+                        setIncrease={() => setIncrease(item.id)}
+                        setDecrease={() => setDecrease(item.id)}
+                      />
+                      <div className="remove-item cursor-pointer mt-2 sm:mt-0">
+                        <FontAwesomeIcon
+                          icon={faTrash}
+                          className="text-red-500"
+                          onClick={() => removeItemFromCart(item.id)}
                         />
-                        <div className="remove-item cursor-pointer mt-2 sm:mt-0">
-                          <FontAwesomeIcon
-                            icon={faTrash}
-                            className="text-red-500"
-                            onClick={() => removeItemFromCart(item.id)}
-                          />
-                        </div>
                       </div>
+                      {/* </div> */}
                       <hr />
                     </div>
                   ))}
