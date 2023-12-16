@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import CartAmountToggle from "./cartAmountToggle";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { addToCart  } from "./cartAction"; // Import the addToCart action creator
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -14,25 +13,43 @@ const Cart = () => {
   const shippingCost = cart.length === 0 ? 0 : 200;
 
   useEffect(() => {
-    // Load cart data from localStorage on component mount
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setAmounts(storedCart); // Corrected the function name from setCart to setAmounts
-  }, []);
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
 
   useEffect(() => {
-    // Save cart data to localStorage whenever the cart changes
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  // Function to add an item to the cart
-  const addToCart = (item) => {
-    dispatch(addToCartAction({ ...item, quantity: 1 })); // Dispatch the "ADD_TO_CART" action
+  useEffect(() => {
+    // Initialize quantities based on the items in the cart
+    const initialAmounts = {};
+    cart.forEach((item) => {
+      initialAmounts[item.id] = 1;
+    });
+    setAmounts(initialAmounts);
+  }, [cart]);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+  const removeItemFromCart = (id) => {
+    dispatch(removeFromCart(id));
   };
 
-  const removeFromCart = (itemId) => {
-    dispatch(removeFromCart(itemId));
-  };
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   const setDecrease = (id) => {
     setAmounts((prevAmounts) => ({
       ...prevAmounts,
@@ -40,6 +57,14 @@ const Cart = () => {
     }));
   };
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   const setIncrease = (id) => {
     setAmounts((prevAmounts) => ({
       ...prevAmounts,
@@ -75,32 +100,33 @@ const Cart = () => {
               <div className="flex w-full h-auto items-center p-4 rounded-md shadow-sm">
                 <div className="flex-1">
                   {cart.map((item, index) => (
-                    <div className="mb-4" key={index}>
+                    <div className="cart-page flex mb-4" key={index}>
                       <img
                         className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg shadow-lg hover:scale-[1.1] ease-in duration-300 mix-blend-multiply"
                         src={item.image}
                         alt=""
                       />
-                      <div className="flex flex-col ml-4 w-full">
-                        <h2 className="cart-product-title text-lg sm:text-xl">
-                          {item.title}
-                        </h2>
-                        <p className="text-[green]">Price: {item.price} Rs</p>
-                        <h3>Category: {item.name}</h3>
-                        <CartAmountToggle
-                          itemId={item.id}
-                          amount={amounts[item.id]}
-                          setIncrease={() => setIncrease(item.id)}
-                          setDecrease={() => setDecrease(item.id)}
+                      {/* <div className="flex flex-col ml-4 w-full"> */}
+                      <h3>{item.name}</h3>
+                      <h2 className="cart-product-title text-lg sm:text-xl">
+                        {item.title}
+                      </h2>
+                      <p className="text-[green]">{item.price} Rs</p>
+
+                      <CartAmountToggle
+                        itemId={item.id}
+                        amount={amounts[item.id]}
+                        setIncrease={() => setIncrease(item.id)}
+                        setDecrease={() => setDecrease(item.id)}
+                      />
+                      <div className="remove-item cursor-pointer mt-2 sm:mt-0">
+                        <FontAwesomeIcon
+                          icon={faTrash}
+                          className="text-red-500"
+                          onClick={() => removeItemFromCart(item.id)}
                         />
-                        <div className="remove-item cursor-pointer mt-2 sm:mt-0">
-                          <FontAwesomeIcon
-                            icon={faTrash}
-                            className="text-red-500"
-                            onClick={() => removeItemFromCart(item.id)}
-                          />
-                        </div>
                       </div>
+                      {/* </div> */}
                       <hr />
                     </div>
                   ))}
@@ -144,7 +170,6 @@ const Cart = () => {
                 alt="cart image"
                 style={{ width: "300px", height: "250px" }}
               />
-              {/* <p style={{ marginBottom: "20px" }}>Your cart is empty.</p> */}
               <Link
                 to="/burgers"
                 style={{

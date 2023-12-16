@@ -13,7 +13,7 @@ import Profile from "./pages/Profile";
 import Footer from "./components/footer";
 import ContactForm from "./pages/Contact";
 import OurStory from "./pages/Ourstory";
-import Category from "./components/categories";
+//import Category from "./components/categories";
 import CategoryItems from "./pages/categoryItems";
 import PopularDetail from "./pages/populardetails";
 
@@ -28,7 +28,6 @@ const Router = () => {
             <Route path="/signin" element={<Signin />} />
             <Route path="/" element={<Home />} />
             <Route path="/burgers" element={<Burgers />} />
-            <Route path="/Categories" element={<Category />} />
             <Route path="/Categories/:categoryName" element={<CategoryItems />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />

@@ -1,5 +1,5 @@
 const initialState = {
-  cart: [],
+  cart: JSON.parse(localStorage.getItem('cart')) || [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -21,43 +21,61 @@ const cartReducer = (state = initialState, action) => {
           }
         });
     
-        return {
+        const newState = {
           ...state,
           cart: updatedCart,
         };
+
+        localStorage.setItem('cart', JSON.stringify(newState.cart));
+
+        return newState;
       } else {
-        return {
+        const newState = {
           ...state,
           cart: [...state.cart, action.payload],
         };
+
+        localStorage.setItem('cart', JSON.stringify(newState.cart));
+
+        return newState;
       }
     case "REMOVE_FROM_CART":
-      return {
+      const newStateRemove = {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
 
-      case "INCREMENT_QUANTITY":
-        console.log("Incrementing quantity for item with ID:", action.payload);
-        return {
-          ...state,
-          cart: state.cart.map((item) =>
-            item.id === action.payload
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          ),
+      localStorage.setItem('cart', JSON.stringify(newStateRemove.cart));
+
+      return newStateRemove;
+
+    case "INCREMENT_QUANTITY":
+      const newStateIncrement = {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        ),
       };
-      
-      case "DECREMENT_QUANTITY":
-        return {
-          ...state,
-          cart: state.cart.map((item) =>
-            item.id === action.payload
-              ? { ...item, quantity: item.quantity - 1 }
-              : item
-          ),
+
+      localStorage.setItem('cart', JSON.stringify(newStateIncrement.cart));
+
+      return newStateIncrement;
+
+    case "DECREMENT_QUANTITY":
+      const newStateDecrement = {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        ),
       };
-      
+
+      localStorage.setItem('cart', JSON.stringify(newStateDecrement.cart));
+
+      return newStateDecrement;
 
     default:
       return state;
