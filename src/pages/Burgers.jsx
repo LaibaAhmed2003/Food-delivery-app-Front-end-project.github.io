@@ -42,13 +42,22 @@ const Burgers = () => {
   };
 
   const filterFood = () => {
+    const lowercasedSearchInput = searchInput.toLowerCase();
+
     if (selectedCategory === "all") {
-      return food;
+      return food.filter(
+        (item) =>
+          item.CategoryName.toLowerCase().includes(lowercasedSearchInput) ||
+          item.name.toLowerCase().includes(lowercasedSearchInput)
+      );
     } else {
-      return food.filter((item) => item.CategoryName === selectedCategory);
+      return food
+        .filter((item) => item.CategoryName === selectedCategory)
+        .filter((item) =>
+          item.name.toLowerCase().includes(lowercasedSearchInput)
+        );
     }
   };
-
   return (
     <div className="main-contain">
       <div className="grid grid-cols-1 gap-5">
