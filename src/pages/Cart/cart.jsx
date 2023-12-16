@@ -5,24 +5,32 @@ import { useDispatch, useSelector } from "react-redux";
 import CartAmountToggle from "./cartAmountToggle";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { addToCart  } from "./cartAction"; // Import the addToCart action creator
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
-  const [amounts, setAmounts] = useState({}); // State to store item quantities
+  const [amounts, setAmounts] = useState({});
   const shippingCost = cart.length === 0 ? 0 : 200;
 
   useEffect(() => {
-    // Initialize quantities based on the items in the cart
-    const initialAmounts = {};
-    cart.forEach((item) => {
-      initialAmounts[item.id] = 1;
-    });
-    setAmounts(initialAmounts);
+    // Load cart data from localStorage on component mount
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setAmounts(storedCart); // Corrected the function name from setCart to setAmounts
+  }, []);
+
+  useEffect(() => {
+    // Save cart data to localStorage whenever the cart changes
+    localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  const removeItemFromCart = (id) => {
-    dispatch(removeFromCart(id));
+  // Function to add an item to the cart
+  const addToCart = (item) => {
+    dispatch(addToCartAction({ ...item, quantity: 1 })); // Dispatch the "ADD_TO_CART" action
+  };
+
+  const removeFromCart = (itemId) => {
+    dispatch(removeFromCart(itemId));
   };
 
   const setDecrease = (id) => {

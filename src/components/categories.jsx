@@ -22,15 +22,16 @@ const Category = ({ onSelectCategory }) => {
   return (
     <div className="grid grid-cols-1 gap-5">
       {/* Category box */}
-      <div className="bg-gray-200 p-4 ">
+      <div className="bg-gray-200 p-4 border rounded">
         <h2 className="text-lg font-bold mb-4">Categories</h2>
         <ul>
           {categories.map((category) => (
-            <li key={category._id}>
+            <li key={category._id} className="mb-2">
               <Link
                 to={`/Categories/${category.CategoryName}`}
-                className="text-black-500 "
+                className="text-black-500 hover:text-blue-500 transition duration-300"
                 onClick={() => onSelectCategory(category.CategoryName)}
+                style={{ textDecoration: 'none' }}
               >
                 {category.CategoryName}
               </Link>
@@ -38,12 +39,8 @@ const Category = ({ onSelectCategory }) => {
           ))}
         </ul>
       </div>
-
-      {/* Additional content box */}
-      <div className="bg-gray-300 p-4 rounded shadow">
-        {/* Add your additional content or style here */}
       </div>
-    </div>
+  
   );
 };
 

@@ -3,8 +3,10 @@ import axios from "axios";
 import FoodCard from "../components/foodcard";
 import Category from "../components/categories";
 import { useParams } from "react-router-dom";
+//import CategoryItems from "./categoryItems";
 
 const Burgers = () => {
+
   const [Food, setFood] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const { categoryName } = useParams();
