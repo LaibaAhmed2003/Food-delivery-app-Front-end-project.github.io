@@ -39,44 +39,47 @@ const Burgers = () => {
   const filterFood = () => {
     return Food.filter(
       (item) =>
-        item.name &&
-        item.name.toLowerCase().includes(searchInput.toLowerCase())
+        item.name && item.name.toLowerCase().includes(searchInput.toLowerCase())
     );
   };
 
   const filteredFood = filterFood();
 
   return (
-    <div className="main-contain">
-      <Category onSelectCategory={handleSelectCategory} />
-      <div className="" style={{ textAlign: "center", padding: "24px" }}>
-        <input
-          className=""
-          style={{
-            border: "1px solid black",
-            padding: "10px",
-            borderRadius: "4px",
-            width: "700px",
-          }}
-          type="text"
-          placeholder="Search Food here..."
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
+    <div className="main-container">
+      <div className="category-container">
+        <Category onSelectCategory={handleSelectCategory} />
       </div>
-      <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
-        {filteredFood.map((item) => (
-          <div key={item._id}>
-            <FoodCard
-              name={item.name}
-              price={item.price}
-              img={item.img}
-              dec={item.description}
-              CategoryName={item.CategoryName}
-              id={item._id}
-            />
-          </div>
-        ))}
+      <div className="search-product-container">
+        <div className="" style={{ textAlign: "center", padding: "24px" }}>
+          <input
+            className=""
+            style={{
+              border: "0.3px solid gray",
+              padding: "10px",
+              borderRadius: "4px",
+              width: "700px",
+            }}
+            type="text"
+            placeholder="Search Food here..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+        </div>
+        <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
+          {filteredFood.map((item) => (
+            <div key={item._id}>
+              <FoodCard
+                name={item.name}
+                price={item.price}
+                img={item.img}
+                dec={item.description}
+                CategoryName={item.CategoryName}
+                id={item._id}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

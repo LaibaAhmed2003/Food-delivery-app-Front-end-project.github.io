@@ -34,7 +34,7 @@ const Navbar = () => {
         <NavLink to="/contact" className="navlinks">
           Contact Us
         </NavLink>
-
+        {/* <div className="rightdiv"> */}
         {localStorage.getItem("authToken") ? (
           <NavLink to="/cart" className="nav-icons hover:text-red-500">
             <FontAwesomeIcon icon={faBagShopping} />
@@ -67,6 +67,7 @@ const Navbar = () => {
         ) : (
           ""
         )}
+        {/* </div> */}
       </div>
     </div>
   );
