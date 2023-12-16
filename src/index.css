@@ -509,3 +509,74 @@ ul {
   font-size: 34px;
   font-weight: bold;
 }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 40px 70px;
+}
+.contact-heading {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.input-form {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-form.error {
+  border-color: #ff0000; /* Red border for error */
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.storymaindiv {
+  height: 400px;
+  background-image: url("https://images.pexels.com/photos/1199959/pexels-photo-1199959.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+.storymaindiv h1 {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.storycontent {
+  padding: 20px 120px;
+  text-align: center;
+}
+.storycontent h2 {
+  margin: 4px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.storycontent p {
+  margin: 4px;
+  padding: 20px;
+  font-weight: 500;
+  color: rgb(84, 83, 83);
+}
