@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
-  const [amounts, setAmounts] = useState({}); // State to store item quantities
+  const [amounts, setAmounts] = useState({});
   const shippingCost = cart.length === 0 ? 0 : 200;
 
   useEffect(() => {
@@ -136,7 +136,6 @@ const Cart = () => {
                 alt="cart image"
                 style={{ width: "300px", height: "250px" }}
               />
-              {/* <p style={{ marginBottom: "20px" }}>Your cart is empty.</p> */}
               <Link
                 to="/burgers"
                 style={{

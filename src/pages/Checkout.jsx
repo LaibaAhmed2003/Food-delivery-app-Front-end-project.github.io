@@ -25,9 +25,7 @@ const Checkout = () => {
       billingAddress: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
-      // Handle form submission (e.g., send data to server)
       console.log("Form data submitted:", values);
-      // For now, simulate order placement
       setOrderPlaced(true);
     },
   });
@@ -117,8 +115,6 @@ const Checkout = () => {
             {formik.touched.email && formik.errors.email && (
               <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
             )}
-
-            {/* Repeat the above block for other form fields (fullName, phoneNumber, billingAddress) */}
             <label
               htmlFor="fullName"
               className="mt-4 mb-2 block text-sm font-medium"

@@ -1,9 +1,6 @@
-// import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
-  faUser,
   faBagShopping,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +31,6 @@ const Navbar = () => {
         <NavLink to="/contact" className="navlinks">
           Contact Us
         </NavLink>
-        {/* <div className="rightdiv"> */}
         {localStorage.getItem("authToken") ? (
           <NavLink to="/cart" className="nav-icons hover:text-red-500">
             <FontAwesomeIcon icon={faBagShopping} />
@@ -55,19 +51,11 @@ const Navbar = () => {
           </a>
         )}
 
-        {/* {localStorage.getItem("authToken") ? (
-          <NavLink to="/profile" className="nav-icons hover:text-red-500">
-            <FontAwesomeIcon icon={faUser} />
-          </NavLink>
-        ) : (
-          ""
-        )} */}
         {localStorage.getItem("authToken") ? (
           <NavLink to="/checkout"></NavLink>
         ) : (
           ""
         )}
-        {/* </div> */}
       </div>
     </div>
   );

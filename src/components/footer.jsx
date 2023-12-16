@@ -1,4 +1,4 @@
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "./Images/navlogo.png";
 
 const Footer = () => {
