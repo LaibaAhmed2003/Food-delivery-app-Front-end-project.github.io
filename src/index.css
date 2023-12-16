@@ -494,20 +494,30 @@ ul {
 }
 
 .food-detail {
-  background-color: white;
-  padding: 84px;
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  margin: 40px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0.5px 1.5px 5.5px gray;
 }
 .food-detail img {
   width: 400px;
   height: 400px;
 }
 
-.food-detail h2 {
-  font-size: 34px;
+.detail h2 {
+  font-size: 44px;
   font-weight: bold;
+}
+.detail .price {
+  font-size: 18px;
+  color: green;
+  letter-spacing: 2px;
+}
+.detail p {
+  font-size: 20px;
 }
 .contact-form {
   display: flex;

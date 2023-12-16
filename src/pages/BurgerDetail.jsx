@@ -49,14 +49,21 @@ const FoodDetail = () => {
       <img src={foodDetail.img} alt={foodDetail.name} />
       <div className="detail">
         <h2>{foodDetail.name}</h2>
-        <p>Price: ${foodDetail.price}</p>
+
+        <div className="flex items-center">
+          <p className="price text-lg font-semibold text-black cursor-auto my-3">
+            Rs{foodDetail.price}
+          </p>
+          <del>
+            <p className="text-sm text-gray-600 cursor-auto ml-2">Rs199</p>
+          </del>
+        </div>
+
         <p>{foodDetail.description}</p>
+
         <Link to="/cart">
-          <button
-            className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-            onClick={() => cartHandler()}
-          >
-            add to cart
+          <button className="btnn" onClick={() => cartHandler()}>
+            Add To Cart
           </button>
         </Link>
       </div>

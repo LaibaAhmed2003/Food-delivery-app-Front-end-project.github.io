@@ -16,7 +16,7 @@ const ProductCard = ({ name, price, img, dec, CategoryName, id }) => {
           </p>
           <div className="flex items-center">
             <p className="text-lg font-semibold text-black cursor-auto my-3">
-              {price}
+              {price}Rs
             </p>
             <del>
               <p className="text-sm text-gray-600 cursor-auto ml-2">Rs199</p>
