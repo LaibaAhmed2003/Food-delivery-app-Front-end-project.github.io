@@ -9,7 +9,8 @@ const Burgers = () => {
   const [searchInput, setSearchInput] = useState("");
   const { categoryName } = useParams();
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(categoryName);
+  // const [selectedCategory, setSelectedCategory] = useState(categoryName);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,9 +64,20 @@ const Burgers = () => {
   return (
     <div className="main-contain">
       <div className="grid grid-cols-1 gap-5">
-        <div className="bg-gray-200 p-4 border rounded">
+        <div
+          className="bg-gray-200 p-4 border rounded"
+          style={{ textAlign: "center" }}
+        >
           <h2 className="text-lg font-bold mb-4">Categories</h2>
-          <ul>
+          <ul
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              textAlign: "center",
+            }}
+          >
             <li key="all" className="mb-2">
               <button
                 className="text-black-500 hover:text-blue-500 transition duration-300"

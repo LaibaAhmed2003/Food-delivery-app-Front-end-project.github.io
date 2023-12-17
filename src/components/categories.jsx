@@ -30,6 +30,7 @@ const Category = ({ onSelectCategory }) => {
               <Link
                 to={`/Categories/${category.CategoryName}`}
                 className="text-black-500 category-heading"
+                style={{ display: "flex" }}
                 onClick={() => onSelectCategory(category.CategoryName)}
               >
                 {category.CategoryName}
