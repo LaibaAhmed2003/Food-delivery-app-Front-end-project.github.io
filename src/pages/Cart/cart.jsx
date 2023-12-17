@@ -13,6 +13,15 @@ const Cart = () => {
   const shippingCost = cart.length === 0 ? 0 : 200;
 
   useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  useEffect(() => {
     // Initialize quantities based on the items in the cart
     const initialAmounts = {};
     cart.forEach((item) => {
@@ -21,10 +30,26 @@ const Cart = () => {
     setAmounts(initialAmounts);
   }, [cart]);
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   const removeItemFromCart = (id) => {
     dispatch(removeFromCart(id));
   };
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   const setDecrease = (id) => {
     setAmounts((prevAmounts) => ({
       ...prevAmounts,
@@ -32,6 +57,14 @@ const Cart = () => {
     }));
   };
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
   const setIncrease = (id) => {
     setAmounts((prevAmounts) => ({
       ...prevAmounts,
