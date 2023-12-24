@@ -45,27 +45,29 @@ const FoodDetail = () => {
     dispatch(addToCart(cartItem));
   };
   return (
-    <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
-      <img src={foodDetail.img} alt={foodDetail.name} />
-      <div className="detail">
-        <h2>{foodDetail.name}</h2>
+    <div style={{ marginTop: "5%" }}>
+      <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
+        <img src={foodDetail.img} alt={foodDetail.name} />
+        <div className="detail">
+          <h2>{foodDetail.name}</h2>
 
-        <div className="flex items-center">
-          <p className="price text-lg font-semibold text-black cursor-auto my-3">
-            Rs{foodDetail.price}
-          </p>
-          <del>
-            <p className="text-sm text-gray-600 cursor-auto ml-2">Rs199</p>
-          </del>
+          <div className="flex items-center">
+            <p className="price text-lg font-semibold text-black cursor-auto my-3">
+              Rs{foodDetail.price}
+            </p>
+            <del>
+              <p className="text-sm text-gray-600 cursor-auto ml-2">Rs199</p>
+            </del>
+          </div>
+
+          <p>{foodDetail.description}</p>
+
+          <Link to="/cart">
+            <button className="btnn" onClick={() => cartHandler()}>
+              Add To Cart
+            </button>
+          </Link>
         </div>
-
-        <p>{foodDetail.description}</p>
-
-        <Link to="/cart">
-          <button className="btnn" onClick={() => cartHandler()}>
-            Add To Cart
-          </button>
-        </Link>
       </div>
     </div>
   );

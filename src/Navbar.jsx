@@ -39,7 +39,7 @@ const Navbar = () => {
           ""
         )}
         {!localStorage.getItem("authToken") ? (
-          <NavLink to="/signup" className="navlinks">
+          <NavLink to="/signup" className="signup navlinks">
             Sign Up
           </NavLink>
         ) : (

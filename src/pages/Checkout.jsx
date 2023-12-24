@@ -31,8 +31,8 @@ const Checkout = () => {
   });
 
   return (
-    <>
-      <div style={{ marginTop: "60px", display: "flex", padding: "0px 44px" }}>
+    <div style={{ marginTop: "6%" }}>
+      <div style={{ marginTop: "6%", display: "flex", padding: "0px 44px" }}>
         <div className="grid sm:px-10 lg:grid-cols-1 lg:px-10 xl:px-5">
           <div className="px-2 pt-4">
             <p className="text-xl font-medium">Order Summary</p>
@@ -286,7 +286,7 @@ const Checkout = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

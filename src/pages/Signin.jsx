@@ -43,7 +43,7 @@ const SignIn = () => {
   });
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
+    <div style={{ marginTop: "6%" }} className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
       <form className="flex flex-col gap-4" onSubmit={formik.handleSubmit}>
         <input
@@ -80,6 +80,7 @@ const SignIn = () => {
         ) : null}
         <button
           type="submit"
+          style={{ backgroundColor: "#fac031" }}
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
         >
           Sign In
@@ -88,7 +89,9 @@ const SignIn = () => {
       <div className="flex gap-2 mt-5">
         <p>Don't have an account?</p>
         <Link to={"/signup"}>
-          <span className="text-blue-700">Sign Up</span>
+          <span className="text-blue-700" style={{ color: "#fac031" }}>
+            Sign Up
+          </span>
         </Link>
       </div>
     </div>
