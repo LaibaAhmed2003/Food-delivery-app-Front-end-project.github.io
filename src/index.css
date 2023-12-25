@@ -42,13 +42,13 @@ body {
   font-weight: 700;
 }
 .navlinks:hover {
-  color: rgb(202, 3, 3);
+  color: #fac031;
 }
 .rightdiv {
   margin-right: 60px;
 }
 .nav-icons {
-  background-color: #f5e35a;
+  background-color: #fac031;
   border-radius: 50%;
   text-decoration: none;
   margin: 4px;
@@ -64,8 +64,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   opacity: 0.9;
   display: flex;
   align-items: center;
@@ -129,7 +129,7 @@ body {
 
 .home .content p {
   font-size: 1rem;
-  color: #363636;
+  color: black;
   padding: 1rem 0;
 }
 
@@ -137,8 +137,10 @@ body {
 .btnn {
   display: inline-block;
   padding: 0.5rem 2rem;
-  border: 0.1rem solid rgb(161, 63, 63);
-  color: rgb(161, 63, 63);
+  /* border: 0.1rem solid rgb(161, 63, 63); */
+  border: 0.1rem solid #fac031;
+  color: #fac031;
+  /* color: rgb(161, 63, 63); */
   cursor: pointer;
   font-size: 1.1rem;
   border-radius: 0.5rem;
@@ -154,7 +156,7 @@ body {
   right: 0;
   width: 0%;
   height: 100%;
-  background: rgb(161, 63, 63);
+  background: #fac031;
   transition: 0.3s linear;
   z-index: -1;
 }
@@ -174,8 +176,9 @@ body {
   padding: 0.5rem 2rem;
 }
 .steps .box {
+  margin-top: 26px;
   flex: 1 1 1.5rem;
-  padding: 0.5rem;
+  padding: 1.5rem 0.5rem;
   text-align: center;
 }
 .steps .box img {
@@ -186,7 +189,7 @@ body {
 }
 .steps .box h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: black;
   text-transform: capitalize;
   padding: 1rem;
   font-weight: bold;
@@ -198,21 +201,21 @@ ul {
 }
 /* footer here */
 .site-footer {
-  background-color: #ffffff;
+  background-color: white;
   padding: 45px 0 20px;
   font-size: 15px;
   line-height: 24px;
-  color: #000000;
+  color: black;
 }
 .site-footer hr {
-  border-top-color: #000000;
+  border-top-color: white;
   opacity: 0.5;
 }
 .site-footer hr.small {
   margin: 20px 0;
 }
 .site-footer h6 {
-  color: #0e0e0e;
+  color: black;
   font-size: 16px;
   text-transform: uppercase;
   margin-top: 5px;
@@ -234,12 +237,12 @@ ul {
   display: block;
 }
 .footer-links a {
-  color: #000000;
+  color: black;
 }
 .footer-links a:active,
 .footer-links a:focus,
 .footer-links a:hover {
-  color: #3366cc;
+  color: #fac031;
   text-decoration: none;
 }
 
@@ -249,7 +252,7 @@ ul {
 }
 
 .food-detail {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   padding: 50px;
   margin: 40px 40px;
   display: flex;

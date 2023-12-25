@@ -24,7 +24,7 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <>
+    <div>
       <div className="home">
         <div className="content">
           <h3>food made with love</h3>
@@ -45,7 +45,14 @@ const Home = () => {
         </div>
       </div>
 
-      <h2 style={{ fontWeight: "bold", fontSize: "30px", marginLeft: "74px" }}>
+      <h2
+        style={{
+          fontWeight: "bold",
+          fontSize: "32px",
+          marginLeft: "74px",
+          marginTop: "10px",
+        }}
+      >
         Popular Items
       </h2>
 
@@ -85,7 +92,7 @@ const Home = () => {
         </section>
       </div>
       <br />
-    </>
+    </div>
   );
 };
 
