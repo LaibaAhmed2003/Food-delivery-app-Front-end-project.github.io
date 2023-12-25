@@ -62,7 +62,7 @@ const Burgers = () => {
     }
   };
   return (
-    <div className="main-contain">
+    <div className="main-contain" style={{ marginTop: "5%" }}>
       <div className="grid grid-cols-1 gap-5">
         <div
           className="bg-gray-200 p-4 border rounded"

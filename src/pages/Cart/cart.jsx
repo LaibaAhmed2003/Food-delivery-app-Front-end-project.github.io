@@ -13,12 +13,12 @@ const Cart = () => {
   const shippingCost = cart.length === 0 ? 0 : 200;
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    dispatch({ type: 'SET_CART', payload: storedCart });
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    dispatch({ type: "SET_CART", payload: storedCart });
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   useEffect(() => {
@@ -31,24 +31,24 @@ const Cart = () => {
   }, [cart]);
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    dispatch({ type: 'SET_CART', payload: storedCart });
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    dispatch({ type: "SET_CART", payload: storedCart });
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
   const removeItemFromCart = (id) => {
     dispatch(removeFromCart(id));
   };
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    dispatch({ type: 'SET_CART', payload: storedCart });
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    dispatch({ type: "SET_CART", payload: storedCart });
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
   const setDecrease = (id) => {
     setAmounts((prevAmounts) => ({
@@ -58,12 +58,12 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    dispatch({ type: 'SET_CART', payload: storedCart });
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    dispatch({ type: "SET_CART", payload: storedCart });
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
   const setIncrease = (id) => {
     setAmounts((prevAmounts) => ({
@@ -82,7 +82,7 @@ const Cart = () => {
   };
 
   return (
-    <>
+    <div style={{ marginTop: "6%" }}>
       <div className="bg-[#faf9f9]">
         <section className="container mx-auto p-4 sm:p-8">
           <div className="flex flex-col sm:flex-row justify-between text-2xl mb-4 sm:mb-8">
@@ -186,7 +186,7 @@ const Cart = () => {
           )}
         </section>
       </div>
-    </>
+    </div>
   );
 };
 

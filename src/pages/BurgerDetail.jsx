@@ -45,7 +45,7 @@ const FoodDetail = () => {
     dispatch(addToCart(cartItem));
   };
   return (
-    <div>
+    <div style={{ marginTop: "5%" }}>
       <div className="food-detail food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
         <img src={foodDetail.img} alt={foodDetail.name} />
         <div className="detail">
