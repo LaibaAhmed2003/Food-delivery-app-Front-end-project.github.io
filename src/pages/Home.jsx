@@ -94,9 +94,9 @@ const Home = () => {
             <div className="content">
               <h3>tasty burger</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident iure esse sunt enim dolorem et ut in maxime veritatis
-                recusandae?
+                Its juicy, its fiery, its fantastic. White piece chicken
+                marinated, breaded fresh on site and then fried to a perfect
+                juicy crunch.
               </p>
             </div>
           </div>

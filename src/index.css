@@ -127,6 +127,7 @@ section {
 .home .content {
   flex: 1 1 40rem;
   padding-top: 6rem;
+  color: #e0dfdd;
 }
 
 .home .image {
@@ -158,7 +159,7 @@ section {
 
 .home .content p {
   font-size: 1rem;
-  color: black;
+  color: #787777;
   padding: 1rem 0;
 }
 
@@ -166,10 +167,8 @@ section {
 .btnn {
   display: inline-block;
   padding: 0.5rem 2rem;
-  /* border: 0.1rem solid rgb(161, 63, 63); */
   border: 0.1rem solid #fac031;
   color: #fac031;
-  /* color: rgb(161, 63, 63); */
   cursor: pointer;
   font-size: 1.1rem;
   border-radius: 0.5rem;
@@ -474,4 +473,40 @@ ul {
   justify-content: space-between;
   padding: 4px;
   margin-right: 17px;
+}
+
+/* category styling */
+.Category-container {
+  margin-top: 13%;
+  background-color: rgb(255, 255, 255);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 230px;
+  text-align: left;
+  padding: 34px;
+}
+.Category-container h2 {
+  font-size: 2.1rem;
+  padding: 12px 0px;
+  color: #666;
+}
+.Category-container .cat-button {
+  display: inline-block;
+  padding: 0.1rem 2rem;
+  width: 150px;
+  border: 0.1rem solid #fac031;
+  color: #fac031;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin-top: 1rem;
+}
+.Category-container .cat-button:active {
+  background-color: #fac031;
+  color: black;
 }

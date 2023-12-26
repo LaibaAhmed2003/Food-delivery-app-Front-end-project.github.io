@@ -62,25 +62,22 @@ const Burgers = () => {
     }
   };
   return (
-    <div className="main-contain" style={{ marginTop: "5%" }}>
+    <div
+      className="main-contain"
+      style={{
+        marginTop: "7%",
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "space-evenly",
+      }}
+    >
       <div className="grid grid-cols-1 gap-5">
-        <div
-          className="bg-gray-200 p-4 border rounded"
-          style={{ textAlign: "center" }}
-        >
-          <h2 className="text-lg font-bold mb-4">Categories</h2>
-          <ul
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-              textAlign: "center",
-            }}
-          >
+        <div className="Category-container bg-gray-200 p-4 border rounded">
+          <h2 className="">Categories</h2>
+          <ul>
             <li key="all" className="mb-2">
               <button
-                className="text-black-500 hover:text-blue-500 transition duration-300"
+                className="cat-button text-black-500  transition duration-300"
                 onClick={() => handleSelectCategory("all")}
                 style={{ textDecoration: "none", cursor: "pointer" }}
               >
@@ -90,7 +87,7 @@ const Burgers = () => {
             {categories.map((category) => (
               <li key={category._id} className="mb-2">
                 <button
-                  className="text-black-500 hover:text-blue-500 transition duration-300"
+                  className="cat-button text-black-500  transition duration-300"
                   onClick={() => handleSelectCategory(category.CategoryName)}
                   style={{ textDecoration: "none", cursor: "pointer" }}
                 >
@@ -101,39 +98,40 @@ const Burgers = () => {
           </ul>
         </div>
       </div>
-
-      <div
-        className=""
-        style={{ textAlign: "center", padding: "24px", marginTop: "20px" }}
-      >
-        <input
+      <div>
+        <div
           className=""
-          style={{
-            border: "1px solid black",
-            padding: "10px",
-            borderRadius: "4px",
-            width: "700px",
-          }}
-          type="text"
-          placeholder="Search Food here..."
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
-      </div>
+          style={{ textAlign: "center", padding: "24px", marginTop: "20px" }}
+        >
+          <input
+            className=""
+            style={{
+              border: "1px solid black",
+              padding: "10px",
+              borderRadius: "4px",
+              width: "700px",
+            }}
+            type="text"
+            placeholder="Search Food here..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+        </div>
 
-      <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
-        {filterFood().map((item) => (
-          <div key={item._id}>
-            <FoodCard
-              name={item.name}
-              price={item.price}
-              img={item.img}
-              dec={item.description}
-              CategoryName={item.CategoryName}
-              id={item._id}
-            />
-          </div>
-        ))}
+        <div className="food-page w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 ">
+          {filterFood().map((item) => (
+            <div key={item._id}>
+              <FoodCard
+                name={item.name}
+                price={item.price}
+                img={item.img}
+                dec={item.description}
+                CategoryName={item.CategoryName}
+                id={item._id}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
