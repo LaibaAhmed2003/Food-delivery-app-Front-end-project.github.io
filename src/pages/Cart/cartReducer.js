@@ -49,33 +49,26 @@ const cartReducer = (state = initialState, action) => {
 
       return newStateRemove;
 
-    case "INCREMENT_QUANTITY":
-      const newStateIncrement = {
-        ...state,
-        cart: state.cart.map((item) =>
-          item.id === action.payload
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        ),
-      };
-
-      localStorage.setItem('cart', JSON.stringify(newStateIncrement.cart));
-
-      return newStateIncrement;
-
-    case "DECREMENT_QUANTITY":
-      const newStateDecrement = {
-        ...state,
-        cart: state.cart.map((item) =>
-          item.id === action.payload
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        ),
-      };
-
-      localStorage.setItem('cart', JSON.stringify(newStateDecrement.cart));
-
-      return newStateDecrement;
+      case "INCREMENT_QUANTITY":
+        const newStateIncrement = {
+          ...state,
+          cart: state.cart.map((item) =>
+            item.id === action.payload ? { ...item, quantity: item.quantity + 1 } : item
+          ),
+        };
+        localStorage.setItem('cart', JSON.stringify(newStateIncrement.cart));
+        return newStateIncrement;
+      
+      case "DECREMENT_QUANTITY":
+        const newStateDecrement = {
+          ...state,
+          cart: state.cart.map((item) =>
+            item.id === action.payload ? { ...item, quantity: item.quantity - 1 } : item
+          ),
+        };
+        localStorage.setItem('cart', JSON.stringify(newStateDecrement.cart));
+        return newStateDecrement;
+        
 
     default:
       return state;

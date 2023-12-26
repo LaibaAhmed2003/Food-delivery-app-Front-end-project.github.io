@@ -43,8 +43,8 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    dispatch({ type: "SET_CART", payload: storedCart });
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch({ type: 'SET_CART', payload: storedCart });
   }, [dispatch]);
 
   useEffect(() => {
