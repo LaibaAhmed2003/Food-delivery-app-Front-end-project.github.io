@@ -10,7 +10,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   transition: all 0.2s linear;
 }
 html {
@@ -82,9 +82,32 @@ section {
   text-decoration: none;
   margin: 4px;
   padding: 10px;
-  color: black;
+  color: white;
   font-weight: 100;
   width: 300px;
+}
+.social-icons {
+  background-color: #fac031;
+  border-radius: 50%;
+  text-decoration: none;
+  margin: 4px;
+  padding: 10px;
+  color: white;
+  font-weight: 100;
+  cursor: pointer;
+
+  /* width: 300px; */
+}
+.footer-icons {
+  background-color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  margin: 4px;
+  padding: 10px;
+  color: #fac031;
+  font-weight: 100;
+  cursor: pointer;
+  /* width: 300px; */
 }
 .fit {
   height: 500px;
@@ -202,7 +225,25 @@ section {
   color: white;
 }
 .signup:hover {
-  color: black;
+  background: transparent;
+  padding: 0.5rem 2rem;
+  border: 2px solid #fac031;
+  border-radius: 0.5rem;
+  color: grey;
+}
+.logout {
+  background: transparent;
+  padding: 0.5rem 2rem;
+  border: 2px solid #fac031;
+  border-radius: 0.5rem;
+  color: grey;
+  font-size: 17px;
+}
+.logout:hover {
+  background: #fac031;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  color: white;
 }
 /* Speciality section */
 .speciality {
@@ -295,7 +336,8 @@ ul {
 }
 /* footer here */
 .site-footer {
-  background-color: white;
+  background-color: #fac031;
+  color: white;
   padding: 45px 0 20px;
   font-size: 15px;
   line-height: 24px;
@@ -309,23 +351,23 @@ ul {
   margin: 20px 0;
 }
 .site-footer h6 {
-  color: black;
-  font-size: 16px;
+  color: white;
+  font-size: 19px;
   text-transform: uppercase;
   margin-top: 5px;
   letter-spacing: 2px;
 }
 .site-footer a {
-  color: #e60000;
+  color: white;
 }
 .site-footer a:hover {
-  color: #3366cc;
+  color: black;
   text-decoration: none;
 }
 .footer-links {
   padding-left: 0;
   list-style: none;
-  color: rgb(161, 63, 63);
+  color: white;
 }
 .footer-links li {
   display: block;
@@ -477,13 +519,13 @@ ul {
 
 /* category styling */
 .Category-container {
-  margin-top: 13%;
+  margin-top: 17%;
   background-color: rgb(255, 255, 255);
   height: 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 230px;
+  width: 240px;
   text-align: left;
   padding: 34px;
 }
@@ -509,4 +551,15 @@ ul {
 .Category-container .cat-button:active {
   background-color: #fac031;
   color: black;
+}
+
+.Menu-Searchbar {
+  border: 1px solid rgb(172, 170, 170);
+  padding: 10px;
+  border-radius: 4px;
+  width: 700px;
+  background-color: transparent;
+}
+.Menu-Searchbar:active {
+  background-color: white;
 }

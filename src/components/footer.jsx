@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "./Images/navlogo.png";
+import {
+  faInstagram,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
   return (
@@ -9,17 +15,18 @@ const Footer = () => {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-evenly",
           margin: "0px 100px",
+          borderBottom: "1px solid white",
         }}
       >
         <div
           className=""
           style={{
-            padding: "10px 40px",
+            // padding: "10px 40px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
           }}
         >
           <div
@@ -31,7 +38,7 @@ const Footer = () => {
             <img
               src={logo}
               alt=""
-              style={{ width: "200px", height: "200px", marginTop: "-3%" }}
+              style={{ width: "280px", height: "270px", marginTop: "-3%" }}
             />
           </div>
           <hr />
@@ -41,7 +48,10 @@ const Footer = () => {
               textAlign: "center",
             }}
           >
-            <p className="text-justify">
+            <p
+              className="text-justify"
+              style={{ color: "white", fontSize: "17px" }}
+            >
               Nestled in the heart of the city, Foodfest is a haven for food
               enthusiasts seeking a gastronomic adventure. Our restaurant is a
               celebration of diverse cuisines, expertly crafted by our talented
@@ -71,13 +81,20 @@ const Footer = () => {
                 <li>
                   <Link to="/cart">Cart</Link>
                 </li>
+                <li>Contact us at foodfest@gmail.com</li>
+                <FontAwesomeIcon icon={faInstagram} className="footer-icons" />
+                <FontAwesomeIcon icon={faLinkedin} className="footer-icons" />
+                <FontAwesomeIcon icon={faWhatsapp} className="footer-icons" />
               </ul>
             </div>
           </div>
         </div>
         <hr />
       </div>
-      <div className="container" style={{ textAlign: "center" }}>
+      <div
+        className="container"
+        style={{ textAlign: "center", marginTop: "20px" }}
+      >
         <div
           className="row"
           style={{ textAlign: "center", marginLeft: "30px" }}

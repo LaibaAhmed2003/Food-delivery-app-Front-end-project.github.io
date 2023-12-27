@@ -4,6 +4,12 @@ import {
   faBagShopping,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInstagram,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+
 import logo from "./components/Images/navlogo.png";
 
 const Navbar = () => {
@@ -32,8 +38,9 @@ const Navbar = () => {
           Contact Us
         </NavLink>
         {localStorage.getItem("authToken") ? (
-          <NavLink to="/cart" className="nav-icons hover:text-red-500">
-            <FontAwesomeIcon icon={faBagShopping} />
+          <NavLink to="/cart" className="navlinks ">
+            {/* <FontAwesomeIcon icon={faBagShopping} /> */}
+            My Cart
           </NavLink>
         ) : (
           ""
@@ -43,11 +50,9 @@ const Navbar = () => {
             Sign Up
           </NavLink>
         ) : (
-          <a
-            className="nav-icons cursor-pointer hover:text-red-500"
-            onClick={handlelogout}
-          >
-            <FontAwesomeIcon icon={faRightFromBracket} />
+          <a className="logout cursor-pointer " onClick={handlelogout}>
+            {/* <FontAwesomeIcon icon={faRightFromBracket} /> */}
+            logout
           </a>
         )}
 
@@ -56,6 +61,11 @@ const Navbar = () => {
         ) : (
           ""
         )}
+      </div>
+      <div className="rightnav">
+        <FontAwesomeIcon icon={faInstagram} className="social-icons" />
+        <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
+        <FontAwesomeIcon icon={faWhatsapp} className="social-icons" />
       </div>
     </div>
   );

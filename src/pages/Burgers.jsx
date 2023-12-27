@@ -104,13 +104,7 @@ const Burgers = () => {
           style={{ textAlign: "center", padding: "24px", marginTop: "20px" }}
         >
           <input
-            className=""
-            style={{
-              border: "1px solid black",
-              padding: "10px",
-              borderRadius: "4px",
-              width: "700px",
-            }}
+            className="Menu-Searchbar"
             type="text"
             placeholder="Search Food here..."
             value={searchInput}
