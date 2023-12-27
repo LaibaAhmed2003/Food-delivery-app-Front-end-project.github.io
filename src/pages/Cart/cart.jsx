@@ -22,13 +22,16 @@ const Cart = () => {
   }, [cart]);
 
   useEffect(() => {
-    // Initialize quantities based on the items in the cart
-    const initialAmounts = {};
+    const initialAmounts = { ...amounts }; // Copy the existing amounts
+
     cart.forEach((item) => {
-      initialAmounts[item.id] = 1;
+      if (!(item.id in initialAmounts)) {
+        initialAmounts[item.id] = 1;
+      }
     });
+
     setAmounts(initialAmounts);
-  }, [cart]);
+  }, [cart, amounts]);
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -43,8 +46,8 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    dispatch({ type: 'SET_CART', payload: storedCart });
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    dispatch({ type: "SET_CART", payload: storedCart });
   }, [dispatch]);
 
   useEffect(() => {
@@ -81,6 +84,8 @@ const Cart = () => {
     return subtotal + shippingCost;
   };
 
+  const totalPrice = calculateTotal();
+
   return (
     <div style={{ marginTop: "6%" }}>
       <div className="bg-[#faf9f9]">
@@ -107,10 +112,15 @@ const Cart = () => {
                         alt=""
                       />
                       {/* <div className="flex flex-col ml-4 w-full"> */}
-                      <h3>{item.name}</h3>
+                      <h2 className="cart-product-title text-lg sm:text-xl">
+                        {item.name} ({amounts[item.id]}x)
+                      </h2>
+                      {/* <h3>{item.name}</h3> */}
+
                       <h2 className="cart-product-title text-lg sm:text-xl">
                         {item.title}
                       </h2>
+
                       <p className="text-[green]">{item.price} Rs</p>
 
                       <CartAmountToggle
@@ -134,6 +144,14 @@ const Cart = () => {
                 <div className="w-full sm:w-[25%] border-2 border-[white-400] rounded-md shadow-md p-6 bg-[white]">
                   <div className="summary">
                     <h1 className="text-2xl text-center mb-4">Summary</h1>
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex justify-between mb-2">
+                        <p>
+                          {item.name} ({amounts[item.id]}x)
+                        </p>
+                        <p>{item.price * amounts[item.id]} Rs</p>
+                      </div>
+                    ))}
                     <div className="flex justify-between mb-4">
                       <p>Subtotal</p>
                       <p>{calculateSubtotal()} Rs</p>
@@ -150,6 +168,9 @@ const Cart = () => {
                       <Link to="/checkout">
                         <button className="btnn mx-5">CHECKOUT</button>
                       </Link>
+                      {/* <Link to={`/checkout?totalPrice=${totalPrice}`}>
+                        <button className="btnn mx-5">CHECKOUT</button>
+                      </Link> */}
                     </button>
                   </div>
                 </div>

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -10,6 +12,15 @@ const Checkout = () => {
   const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
   const shippingCost = 200;
   const total = subtotal + shippingCost;
+  const [amounts, setAmounts] = useState({});
+
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const totalPrice = new URLSearchParams(location.search).get("totalPrice");
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const formik = useFormik({
     initialValues: {
@@ -49,7 +60,12 @@ const Checkout = () => {
                       alt="Food"
                     />
                     <div className="flex w-full flex-col px-4 py-4">
+                      <h2 className="cart-product-title text-lg sm:text-xl">
+                        {item.name} ({amounts[item.id]}x)
+                      </h2>
+
                       <span className="font-semibold">{item.dec}</span>
+
                       <p className="text-lg font-bold">{item.price}Rs</p>
                     </div>
                   </div>
