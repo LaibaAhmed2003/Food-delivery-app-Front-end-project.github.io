@@ -50,7 +50,10 @@ const Footer = () => {
           >
             <p
               className="text-justify"
-              style={{ color: "white", fontSize: "17px" }}
+              style={{
+                color: "white",
+                fontSize: "17px",
+              }}
             >
               Nestled in the heart of the city, Foodfest is a haven for food
               enthusiasts seeking a gastronomic adventure. Our restaurant is a
@@ -76,10 +79,14 @@ const Footer = () => {
               <h6>Quick Links</h6>
               <ul className="footer-links">
                 <li>
-                  <Link to="/burgers">Menu</Link>
+                  <Link to="/burgers" style={{ color: "white" }}>
+                    Menu
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/cart">Cart</Link>
+                  <Link to="/cart" style={{ color: "white" }}>
+                    Cart
+                  </Link>
                 </li>
                 <li>Contact us at foodfest@gmail.com</li>
                 <FontAwesomeIcon icon={faInstagram} className="footer-icons" />
